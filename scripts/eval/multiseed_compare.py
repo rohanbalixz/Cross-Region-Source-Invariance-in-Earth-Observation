@@ -1,12 +1,18 @@
 """Two-seed error bars: re-evaluate all cities with the seed-0 checkpoints
 (without touching the canonical eval_metrics.json), then report per-region
 CNN/UNet/ConvLSTM gaps for both seeds and their spread."""
-import json, glob, tempfile, shutil
+import json
+import shutil
+import tempfile
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.models import load_models
 from scripts.eval.cross_region_eval import process_city
+from scripts.eval.models import load_models
+
 REPO=Path(__file__).resolve().parents[2]
 PROC=REPO/"data/processed"; T="t=0.01"; CONUS={"cnn":0.581,"unet":0.558,"convlstm":0.391}
 MODELS=["cnn","unet","convlstm"]

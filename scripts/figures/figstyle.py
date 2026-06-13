@@ -2,7 +2,6 @@
 identity, colourblind-safe (Okabe--Ito), no chartjunk, editable-text PDFs.
 Import and call use_style() at the top of each figure script."""
 import matplotlib as mpl
-import matplotlib.pyplot as plt
 
 # Okabe--Ito colourblind-safe qualitative palette
 C = {

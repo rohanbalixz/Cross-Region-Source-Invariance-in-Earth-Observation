@@ -5,14 +5,21 @@ regions that extend the change-rate analysis to twenty (grey). Robinson
 projection, Natural Earth land. Deliberately reaches beyond the Europe/North-
 America concentration that geographic audits of EO benchmarks have flagged."""
 import warnings; warnings.filterwarnings("ignore")
-import numpy as np, glob, os, matplotlib
+import glob
+import os
+
+import matplotlib
+
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+import os as _os
+import sys as _sys
+
 import geopandas as gpd
-from shapely.geometry import Point
+import matplotlib.pyplot as plt
 import rasterio
 from rasterio.warp import transform as rwt
-import os as _os, sys as _sys
+from shapely.geometry import Point
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()
@@ -98,6 +105,7 @@ ax.set_title("88 cities, eight target regions, six continents",
 
 # legend
 from matplotlib.lines import Line2D
+
 handles = [Line2D([0],[0], marker="o", ls="", mfc=c, mec="black", mew=0.5, ms=7.5,
                   label=n) for n, c in (v for v in TARGETS.values())]
 handles += [

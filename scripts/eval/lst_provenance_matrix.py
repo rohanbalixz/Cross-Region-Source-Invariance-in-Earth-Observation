@@ -12,11 +12,17 @@ mechanism generalises off built-up; if not, it is narrower and we say so.
 
 Usage: python -m scripts.eval.lst_provenance_matrix --seeds 20260525 1 2
 """
-import argparse, glob, json
+import argparse
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import pearsonr, spearmanr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
+from scipy.stats import pearsonr, spearmanr
+
 from scripts.acquire.regions import city_by_name
 from scripts.eval.multitask_difficulty import SegUNet
 

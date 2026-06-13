@@ -11,6 +11,7 @@ import json, glob
 from pathlib import Path
 import numpy as np, torch, torch.nn as nn, timm, warnings; warnings.filterwarnings("ignore")
 from scipy.stats import spearmanr
+
 REPO=Path(__file__).resolve().parents[2]; DEV=torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS=["south_asia","ssa","east_asia","andes","mena","eeca","oceania"]; SEED=20260525
 IMA=torch.tensor([0.485,0.456,0.406]).view(1,3,1,1); IMS=torch.tensor([0.229,0.224,0.225]).view(1,3,1,1)
@@ -71,10 +72,10 @@ def main():
     srcs=[s for s in models if all(mat[s].get(t) is not None for t in rr)]
     M=np.array([[mat[s][t] for t in rr] for s in srcs])
     inv=np.mean([spearmanr(M[a],M[b]).correlation for a in range(len(srcs)) for b in range(a+1,len(srcs))])
-    print(f"=== FROZEN-FM (DINOv2) built-up segmentation, 7x7 ===")
+    print("=== FROZEN-FM (DINOv2) built-up segmentation, 7x7 ===")
     print(f"in-region IoU={diag:.3f}  out-of-region={off:.3f}  home-field gap={diag-off:+.4f}  source-inv={inv:.3f}")
-    print(f"from-scratch U-Net same task: home-field gap=+0.126")
-    print(f"=> smaller gap => pretraining reduces imagery source-dependence (nuances law); similar => law holds for FMs")
+    print("from-scratch U-Net same task: home-field gap=+0.126")
+    print("=> smaller gap => pretraining reduces imagery source-dependence (nuances law); similar => law holds for FMs")
     json.dump({"encoder":"DINOv2-ViT-S frozen","task":"built-up binary seg","in_region":round(float(diag),4),
                "out_region":round(float(off),4),"home_field_gap":round(float(diag-off),4),"source_inv":round(float(inv),3),
                "fromscratch_unet_gap":0.126}, open(REPO/"results/metrics/fm_seg_matrix.json","w"),indent=1)

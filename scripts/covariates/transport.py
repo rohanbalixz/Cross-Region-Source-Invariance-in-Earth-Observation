@@ -29,14 +29,15 @@ from pathlib import Path
 
 import numpy as np
 import rasterio
-from rasterio.transform import rowcol
-from pyproj import Transformer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
 from scripts.common import (
-    TILE_PX, TILE_RES_M,
-    enumerate_tiles_from_grid, tile_ref_to_dict, write_tile_records,
+    TILE_PX,
+    TILE_RES_M,
+    enumerate_tiles_from_grid,
+    tile_ref_to_dict,
+    write_tile_records,
 )
 
 try:

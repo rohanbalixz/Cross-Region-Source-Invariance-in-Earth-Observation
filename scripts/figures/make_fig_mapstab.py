@@ -6,9 +6,13 @@ are nearly collinear (Pearson 0.97), so retention reflects how region-invariant
 each input's relationship to the target intrinsically is."""
 import json
 import matplotlib; matplotlib.use("Agg")
-import matplotlib.pyplot as plt, numpy as np
+import os as _os
+import sys as _sys
+
+import matplotlib.pyplot as plt
+import numpy as np
 from scipy.stats import pearsonr
-import os as _os, sys as _sys
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()

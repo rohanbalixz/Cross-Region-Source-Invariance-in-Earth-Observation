@@ -19,6 +19,7 @@ REPO = Path(__file__).resolve().parents[2]
 OUT = REPO / "figures"; OUT.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # for figstyle
 import figstyle as fs
+
 fs.use_style()
 
 

@@ -9,14 +9,19 @@ compared with WorldCover's 0.66 and crop's excluded 0.16.
 
 Usage: python -m scripts.eval.ndbi_builtup_matrix --seeds 20260525 1 2 3 4
 """
-import argparse, glob, json
+import argparse
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
+
 from scripts.acquire.regions import city_by_name
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH
 from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import TARGET_EPOCH, load_city_rasters
 from scripts.eval.multitask_difficulty import SegUNet
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cross-region-source-invariance"
+version = "1.0.0"
+description = "What determines whether a geospatial model transfers across regions: code, receipts, and figures."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Rohan Bali" }]
+keywords = ["earth observation", "remote sensing", "domain generalisation", "transfer", "benchmark"]
+
+[project.urls]
+Repository = "https://github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation"
+
+[tool.setuptools.packages.find]
+include = ["scripts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# Pyflakes (real bugs) + import sorting; style rules relaxed for research code.
+select = ["F"]
+ignore = ["F403", "F405"]   # star-imports are used intentionally in a few modules
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]

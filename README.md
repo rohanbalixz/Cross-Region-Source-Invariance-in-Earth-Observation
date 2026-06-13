@@ -1,7 +1,15 @@
 # Cross-Region Source-Invariance in Earth Observation
 
+[![CI](https://github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation/actions/workflows/ci.yml/badge.svg)](https://github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation/actions/workflows/ci.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+
 Code, evaluation receipts, and figures for a study of **what actually determines
 whether a geospatial model transfers from one region to another**.
+
+<p align="center"><img src="assets/fig_hero.png" width="92%" alt="Two headline results"></p>
+<p align="center"><em>Left: a parameter-free baseline beats the trained model in every region.
+Right: holding the target fixed, cross-region retention falls from a harmonised product to a raw sensor.</em></p>
 
 The central tool is the full *source-by-target transfer matrix*: train one model
 per region and evaluate every model on every region. Reading that matrix — across
@@ -21,6 +29,10 @@ yields two findings:
    harmonised products sit near the top, raw single-sensor inputs near the bottom,
    and a physically-invariant raw signal (SAR) surprisingly high. This axis is
    measurable directly from the data, independently of any trained model.
+
+<p align="center"><img src="assets/fig_dissociation.png" width="80%" alt="Retention spectrum"></p>
+<p align="center"><em>Holding the target and model fixed and swapping only the input: retention is a
+spectrum set by how region-invariant the input-to-label mapping is, not a clean harmonised/raw split.</em></p>
 
 This repository contains everything needed to reproduce the analysis: the
 acquisition and preprocessing pipeline, the training/evaluation code, every
@@ -90,11 +102,24 @@ a few hours of streaming. Preprocessing then builds the per-city tiles:
 python -m scripts.preprocess.build_city_tiffs --region ssa
 ```
 
-## Reproducing the results
+## Verify the headline results in seconds (no data needed)
 
-Every reported number is written to a JSON receipt under `results/metrics/`, so
-the headline results can be inspected without retraining. Representative
-entry points:
+`verify.py` re-derives the main numbers from the committed receipts — including
+recomputing the PANGAEA variance decomposition from the published score table —
+using only `numpy`/`scipy`:
+
+```bash
+pip install -r requirements-verify.txt
+python verify.py        # 13/13 checks, exit 0
+```
+
+This is what CI runs on every push.
+
+## Reproducing the full results
+
+Every reported number is written to a JSON receipt under `results/metrics/`
+([indexed here](results/metrics/README.md)), so the headline results can be
+inspected without retraining. Representative entry points:
 
 | Result | Command | Receipt |
 |---|---|---|

@@ -24,7 +24,6 @@ from __future__ import annotations
 
 import argparse
 import gc
-import json
 import sys
 from pathlib import Path
 
@@ -34,14 +33,20 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.common import (
-    TILE_PX, TILE_STRIDE, TILE_BUILTUP_THRESHOLD,
-    tile_ref_to_dict, write_tile_records, TileRef,
+    TILE_BUILTUP_THRESHOLD,
+    TILE_PX,
+    TILE_STRIDE,
+    TileRef,
+    tile_ref_to_dict,
+    write_tile_records,
+)
+from scripts.eval.cross_region_eval import (
+    EVAL_MASK_THRESH,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    per_tile_metrics,
 )
 from scripts.eval.models import load_models
-from scripts.eval.cross_region_eval import (
-    TRAIN_EPOCHS, TARGET_EPOCH, EVAL_MASK_THRESH, FOM_THRESHOLDS,
-    fom_metrics, per_tile_metrics,
-)
 
 
 def load_conus_rasters(geotiff_root: Path):

@@ -14,16 +14,26 @@ spatial split too), the no-home-field finding is not a leakage artefact.
 
 Usage: python -m scripts.eval.spatial_holdout --seeds 20260525 1 2
 """
-import argparse, json
+import argparse
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+
+import numpy as np
+import torch
+import torch.nn as nn
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.models import SimpleCNN
-from scripts.eval.cross_region_train import soft_jaccard
-from scripts.eval.cross_region_eval import (
-    load_city_rasters, build_input_tensor, fom_metrics,
-    EVAL_MASK_THRESH, TARGET_EPOCH, TRAIN_EPOCHS)
 from scripts.common import TILE_PX
+from scripts.eval.cross_region_eval import (
+    EVAL_MASK_THRESH,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    build_input_tensor,
+    fom_metrics,
+    load_city_rasters,
+)
+from scripts.eval.cross_region_train import soft_jaccard
+from scripts.eval.models import SimpleCNN
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

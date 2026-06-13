@@ -2,13 +2,19 @@
 region, eval every source-model on every target region. Source #9 = existing
 CONUS-trained model. Usage: python -m scripts.eval.transfer_matrix --arch unet
 """
-import argparse, json, tempfile
+import argparse
+import json
+import tempfile
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.models import SimpleCNN, SimpleUNet, ConvLSTMModel
-from scripts.eval.cross_region_eval import process_city
 from scripts.eval import cross_region_train as crt
+from scripts.eval.cross_region_eval import process_city
+from scripts.eval.models import ConvLSTMModel, SimpleCNN, SimpleUNet
+
 REPO=Path(__file__).resolve().parents[2]; PROC=REPO/"data/processed"; T="t=0.01"
 DEV=torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 SRC_REGIONS=["south_asia","ssa","east_asia","andes","mena","sea","eeca","oceania"]

@@ -41,11 +41,11 @@ from rasterio.windows import Window
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.eval.prithvi_encoder import (
-    PrithviEncoder, PrithviBuiltupHead, PrithviSegmentationModel,
-    load_prithvi_encoder, PRITHVI_BANDS, PRITHVI_FRAMES,
     PRITHVI_IMG_SIZE,
+    PrithviBuiltupHead,
+    PrithviSegmentationModel,
+    load_prithvi_encoder,
 )
-
 
 REPO = Path(__file__).resolve().parents[2]
 GEOTIFF = (REPO / "data/processed/conus").resolve()
@@ -167,7 +167,7 @@ class FocalLoss(nn.Module):
 
 def train(args):
     dev = torch.device(args.device)
-    print(f"loading Prithvi encoder ...", flush=True)
+    print("loading Prithvi encoder ...", flush=True)
     enc = load_prithvi_encoder(args.encoder_ckpt, device=dev)
     head = PrithviBuiltupHead().to(dev)
     model = PrithviSegmentationModel(enc, head).to(dev)

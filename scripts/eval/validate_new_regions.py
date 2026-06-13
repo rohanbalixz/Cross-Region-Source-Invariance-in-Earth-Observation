@@ -13,11 +13,15 @@ the city honestly excluded -- never faked.
 
 Run: python -m scripts.eval.validate_new_regions
 """
-import argparse, glob, json
+import argparse
+import glob
+import json
 from pathlib import Path
+
 import numpy as np
-from scripts.acquire.regions import REGIONS, city_by_name
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH, TRAIN_EPOCHS
+
+from scripts.acquire.regions import city_by_name
+from scripts.eval.cross_region_eval import TARGET_EPOCH, TRAIN_EPOCHS, load_city_rasters
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 NEW8 = ["nordic", "central_europe", "china_interior", "south_asia_2",

@@ -23,17 +23,27 @@ quantity-matching -- which is the study's own confound, now turned on itself.
 
 Usage: python -m scripts.eval.pooled_resourced --widths 1 2 4 8 --epochs 30
 """
-import argparse, json
+import argparse
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+
+import numpy as np
+import torch
+import torch.nn as nn
 from sklearn.metrics import roc_auc_score
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.capacity_sweep import WidthCNN
-from scripts.eval.cross_region_train import soft_jaccard
-from scripts.eval.cross_region_eval import (
-    load_city_rasters, build_input_tensor, fom_metrics,
-    EVAL_MASK_THRESH, TARGET_EPOCH, TRAIN_EPOCHS)
 from scripts.common import TILE_PX
+from scripts.eval.capacity_sweep import WidthCNN
+from scripts.eval.cross_region_eval import (
+    EVAL_MASK_THRESH,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    build_input_tensor,
+    fom_metrics,
+    load_city_rasters,
+)
+from scripts.eval.cross_region_train import soft_jaccard
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

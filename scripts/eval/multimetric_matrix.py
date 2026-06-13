@@ -4,15 +4,24 @@ segmentation, no change-rate confound) and change-F1. For each (architecture,
 metric) report the home-field gap and source-invariance, to test whether the
 no-home-field / source-invariance conclusion is FoM-specific.
 """
-import json, glob
+import json
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
 from scipy.stats import spearmanr
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.models import SimpleCNN, SimpleUNet, ConvLSTMModel
 from scripts.eval.cross_region_eval import (
-    load_city_rasters, build_input_tensor, enumerate_tiles_from_grid,
-    TILE_PX, TRAIN_EPOCHS, TARGET_EPOCH, EVAL_MASK_THRESH)
+    TARGET_EPOCH,
+    TILE_PX,
+    TRAIN_EPOCHS,
+    build_input_tensor,
+    enumerate_tiles_from_grid,
+    load_city_rasters,
+)
+from scripts.eval.models import ConvLSTMModel, SimpleCNN, SimpleUNet
+
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO/"data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS = ["south_asia","ssa","east_asia","andes","mena","sea","eeca","oceania"]

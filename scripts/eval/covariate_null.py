@@ -19,12 +19,15 @@ This replaces an earlier ad-hoc number (R^2=0.047) that did not reproduce.
 
 Run:  python -m scripts.eval.covariate_null
 """
-import json, os, glob
+import glob
+import json
+import os
 from pathlib import Path
+
 import numpy as np
 from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.model_selection import cross_val_score, KFold
 from sklearn.metrics import r2_score
+from sklearn.model_selection import KFold, cross_val_score
 
 REPO = Path(__file__).resolve().parents[2]
 PROC = REPO / "data/processed"

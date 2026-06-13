@@ -7,12 +7,18 @@ the no-home-field finding is not an under-fitting artefact.
 
 Usage: python -m scripts.eval.capacity_sweep
 """
-import json, tempfile
+import json
+import tempfile
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+
+import numpy as np
+import torch
+import torch.nn as nn
+
 from scripts.acquire.regions import CITIES
 from scripts.eval.cross_region_eval import process_city
 from scripts.eval.cross_region_train import gather_tiles, soft_jaccard
+
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO/"data/processed"; T="t=0.01"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS = ["south_asia","ssa","east_asia","andes","mena","sea","eeca","oceania"]

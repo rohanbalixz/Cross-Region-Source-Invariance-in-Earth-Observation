@@ -6,10 +6,13 @@ globally-invariant physical signal (Sentinel-1 SAR, 0.89) out-transfers a
 harmonised land-cover classification (WorldCover, 0.85). Bars are mean +/- 1 SD
 over five seeds (three for none here); the dagger marks a degenerate control."""
 import matplotlib; matplotlib.use("Agg")
+import os as _os
+import sys as _sys
+
 import matplotlib.pyplot as plt
-from matplotlib.patches import Patch
 import numpy as np
-import os as _os, sys as _sys
+from matplotlib.patches import Patch
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()

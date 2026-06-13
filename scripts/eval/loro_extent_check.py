@@ -11,11 +11,14 @@ neutral for temporal transfer, consistent with the source being inert.
 Reuses multimetric_matrix.region_metrics / load (extent IoU/F1, change-F1).
 Usage: python -m scripts.eval.loro_extent_check --arch cnn --seed 20260525
 """
-import argparse, json
+import argparse
+import json
 from pathlib import Path
+
 import numpy as np
+
+from scripts.eval.multimetric_matrix import CKPT, load, region_metrics
 from scripts.eval.transfer_matrix import SRC_REGIONS
-from scripts.eval.multimetric_matrix import region_metrics, load, CKPT
 
 REPO = Path(__file__).resolve().parents[2]
 METS = ["extent_iou", "extent_f1", "change_f1"]

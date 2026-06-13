@@ -14,12 +14,16 @@ Usage:
     python -m scripts.eval.multiseed_matrix --arch cnn  --seeds 20260525 1 2 3 4
     python -m scripts.eval.multiseed_matrix --arch unet --seeds 20260525 1 2 3 4
 """
-import argparse, json
+import argparse
+import json
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
 from scipy.stats import spearmanr
+
 from scripts.eval import cross_region_train as crt
-from scripts.eval.transfer_matrix import SRC_REGIONS, region_fom, ARCH
+from scripts.eval.transfer_matrix import ARCH, SRC_REGIONS, region_fom
 
 REPO = Path(__file__).resolve().parents[2]
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

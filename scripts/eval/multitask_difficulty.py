@@ -9,10 +9,15 @@ the easy-vs-hard boundary becomes a characterised law, not a single point.
 
 Usage: python -m scripts.eval.multitask_difficulty
 """
-import json, glob
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.stats import spearmanr
+
 REPO = Path(__file__).resolve().parents[2]
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS = ["south_asia","ssa","east_asia","andes","mena","eeca","oceania"]  # the 7 ready

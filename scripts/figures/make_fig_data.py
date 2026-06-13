@@ -9,12 +9,17 @@ All tiles are real data from the released benchmark (no mock-ups). Sentinel-2 an
 its WorldCover label are the co-registered hard-task pair; Landsat and Sentinel-1
 share the historical tile grid; GHSL is the processed built-up raster. Tiles are
 representative of each city, not pixel-co-registered across sources."""
-import numpy as np, matplotlib
+import matplotlib
+import numpy as np
+
 matplotlib.use("Agg")
+import os as _os
+import sys as _sys
+
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap, BoundaryNorm
 import rasterio
-import os as _os, sys as _sys
+from matplotlib.colors import BoundaryNorm, ListedColormap
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()
@@ -26,7 +31,6 @@ CITIES = [
     ("beijing", "east_asia", "Beijing · temperate"),
     ("sydney",  "oceania",   "Sydney · coastal"),
 ]
-import os
 DATA = _os.path.join(_REPO, "data")
 
 WC = {10:'#006400',20:'#ffbb22',30:'#ffff4c',40:'#f096ff',50:'#fa0000',

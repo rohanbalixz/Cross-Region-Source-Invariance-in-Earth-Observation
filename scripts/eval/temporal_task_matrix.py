@@ -10,14 +10,19 @@ turning the input-representation boundary into a characterised law.
 
 Usage: python -m scripts.eval.temporal_task_matrix
 """
-import json, glob, tempfile
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.stats import spearmanr
+
 from scripts.acquire.regions import city_by_name
+from scripts.eval.cross_region_eval import EVAL_MASK_THRESH, TILE_PX, fom_metrics, load_city_rasters
 from scripts.eval.models import SimpleCNN
-from scripts.eval.cross_region_eval import (
-    load_city_rasters, fom_metrics, TILE_PX, EVAL_MASK_THRESH)
+
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO/"data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS = ["south_asia","ssa","east_asia","andes","mena","sea","eeca","oceania"]
@@ -110,8 +115,7 @@ def main():
     print("\n=== TEMPORAL-TASK CONFIRMATION ===")
     print("built-up nowcast (reference): home-field gap +0.001, source-inv 0.94")
     for r in out: print(f"{r['task']:28} gap={r['home_field_gap']:+.3f}  source-inv={r['source_invariance']:.3f}")
-    gaps=[r['home_field_gap'] for r in out]
-    print(f"\n=> if pop & vol gaps are ~0 (like built-up's +0.001), temporal-extrapolation is source-invariant")
-    print(f"   across 3 tasks, vs imagery-segmentation gaps +0.06..+0.19 -> the input-representation law holds.")
+    print("\n=> if pop & vol gaps are ~0 (like built-up's +0.001), temporal-extrapolation is source-invariant")
+    print("   across 3 tasks, vs imagery-segmentation gaps +0.06..+0.19 -> the input-representation law holds.")
     print("saved results/metrics/temporal_task_matrix.json")
 if __name__=="__main__": main()

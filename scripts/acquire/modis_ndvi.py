@@ -9,13 +9,16 @@ Smoke: python -m scripts.acquire.modis_ndvi --city sydney --pilot
 Full:  python -m scripts.acquire.modis_ndvi --city <name>
 Output: data/ndvi/<region>/<city>/ndvi_series.npz  (ndvi:(T,H,W) float32 [0,1], years)
 """
-import argparse, time
+import argparse
+import time
 from pathlib import Path
+
 import numpy as np
-import rioxarray  # noqa: F401 (registers .rio)
 import odc.stac
-from pystac_client import Client
 import planetary_computer as pc
+import rioxarray  # noqa: F401 (registers .rio)
+from pystac_client import Client
+
 from scripts.acquire.regions import city_by_name
 
 REPO = Path(__file__).resolve().parents[2]

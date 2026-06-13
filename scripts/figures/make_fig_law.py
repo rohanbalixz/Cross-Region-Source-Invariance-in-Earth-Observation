@@ -2,8 +2,11 @@
 temporal-history inputs sit on the r=1 line; spectral-imagery inputs on ~r=0.8,
 including a frozen foundation-model encoder. Crop is greyed (degenerate)."""
 import matplotlib; matplotlib.use("Agg")
-import matplotlib.pyplot as plt, numpy as np
-import os as _os, sys as _sys
+import os as _os
+import sys as _sys
+
+import matplotlib.pyplot as plt
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()

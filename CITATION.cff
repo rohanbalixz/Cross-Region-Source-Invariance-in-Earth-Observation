@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or the released receipts, please cite this repository."
+title: "Cross-Region Source-Invariance in Earth Observation"
+authors:
+  - family-names: "Bali"
+    given-names: "Rohan"
+repository-code: "https://github.com/rohanbalixz/Cross-Region-Source-Invariance-in-Earth-Observation"
+license: Apache-2.0
+date-released: 2026-06-12
+notes: "An accompanying manuscript is under review; this entry will be updated on publication."

@@ -31,10 +31,12 @@ from scipy import ndimage
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
 from scripts.common import (
-    TILE_PX, TILE_RES_M,
-    enumerate_tiles_from_grid, tile_ref_to_dict, write_tile_records,
+    TILE_PX,
+    TILE_RES_M,
+    enumerate_tiles_from_grid,
+    tile_ref_to_dict,
+    write_tile_records,
 )
-
 
 BUILTUP_THRESHOLD = 0.3   # binarize at >= 0.3 built-up fraction
 

@@ -14,11 +14,15 @@ is taken over the eight held-out regions.
 
 Usage: python -m scripts.eval.multisource_loro --arch cnn --seed 20260525
 """
-import argparse, json
+import argparse
+import json
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
+
 from scripts.eval import cross_region_train as crt
-from scripts.eval.transfer_matrix import SRC_REGIONS, region_fom, ARCH
+from scripts.eval.transfer_matrix import ARCH, SRC_REGIONS, region_fom
 
 REPO = Path(__file__).resolve().parents[2]
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

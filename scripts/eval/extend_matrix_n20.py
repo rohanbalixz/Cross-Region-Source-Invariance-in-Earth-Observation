@@ -20,16 +20,25 @@ tighten or the developed-region-is-hard pattern weakens.
 
 Usage: python -m scripts.eval.extend_matrix_n20 --arch cnn
 """
-import argparse, glob, json
+import argparse
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
 from scipy.stats import spearmanr
-from scripts.acquire.regions import CITIES, city_by_name
+
+from scripts.acquire.regions import city_by_name
 from scripts.eval import cross_region_train as crt
-from scripts.eval.transfer_matrix import region_fom, load_model, ARCH, CONUS_CK
 from scripts.eval.cross_region_eval import (
-    load_models, process_city, load_city_rasters, TARGET_EPOCH, TRAIN_EPOCHS,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    load_city_rasters,
+    load_models,
+    process_city,
 )
+from scripts.eval.transfer_matrix import ARCH, CONUS_CK, load_model, region_fom
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

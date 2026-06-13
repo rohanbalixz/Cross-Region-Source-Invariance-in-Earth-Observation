@@ -28,12 +28,13 @@ from pathlib import Path
 
 import numpy as np
 import rasterio
+from pyproj import Transformer
 from rasterio.crs import CRS
 from rasterio.transform import from_bounds
 from rasterio.warp import (
-    Resampling, calculate_default_transform, reproject,
+    Resampling,
+    reproject,
 )
-from pyproj import Transformer
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City

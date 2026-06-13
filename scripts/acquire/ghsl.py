@@ -17,14 +17,12 @@ Outputs: data/raw/ghsl/{layer}/{epoch}/<tile>.tif
 from __future__ import annotations
 
 import argparse
-import os
 import socket
 import sys
 import time
+import urllib.request
 from pathlib import Path
 from typing import Iterable, List
-
-import urllib.request
 
 # A single unresponsive JRC tile must never hang the whole run. Cap every
 # socket read so a stalled connection raises instead of blocking forever.
@@ -63,6 +61,7 @@ _TILE = 1000000.0
 def compute_region_tiles(region: str) -> List[str]:
     """Compute the GHSL tile IDs covering every city bbox in `region`."""
     from pyproj import Transformer  # local import; only needed for new regions
+
     from scripts.acquire.regions import REGIONS
 
     tf = Transformer.from_crs("EPSG:4326", "ESRI:54009", always_xy=True)
@@ -129,6 +128,7 @@ def fetch(url: str, dest: Path, retries: int = 3) -> None:
 def main(epochs: Iterable[int], layers: Iterable[str], out_root: Path,
          regions: Iterable[str] | None = None, workers: int = 8) -> None:
     from concurrent.futures import ThreadPoolExecutor
+
     from scripts.acquire.regions import REGIONS
     region_list = list(regions) if regions else list(REGIONS.keys())
 

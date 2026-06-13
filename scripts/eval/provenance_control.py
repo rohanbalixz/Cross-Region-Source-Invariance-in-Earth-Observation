@@ -17,12 +17,17 @@ alignment: predict the Landsat built-up index (NDBI = (SWIR1-NIR)/(SWIR1+NIR)) a
 Mirrors ndvi_task_matrix scoring (field R2, persistence skill, change corr).
 Usage: python -m scripts.eval.provenance_control
 """
-import glob, json
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr, pearsonr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
-from scripts.acquire.regions import CITIES, city_by_name
+from scipy.stats import pearsonr
+
+from scripts.acquire.regions import city_by_name
 from scripts.eval.models import SimpleCNN
 
 REPO = Path(__file__).resolve().parents[2]; L8DIR = REPO / "data/raw/landsat_history"

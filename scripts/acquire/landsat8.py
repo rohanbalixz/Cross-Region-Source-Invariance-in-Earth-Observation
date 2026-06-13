@@ -43,7 +43,6 @@ import argparse
 import concurrent.futures
 import json
 import sys
-import threading
 import warnings
 from pathlib import Path
 
@@ -56,7 +55,6 @@ warnings.filterwarnings("ignore", category=rasterio.errors.NotGeoreferencedWarni
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
-
 
 # --------------------------------------------------------------------------- #
 #                              configuration                                    #
@@ -126,7 +124,7 @@ def _gather_scenes(client, bbox, window):
 def _best_scene_for_point(items, lon, lat):
     """Pick the lowest-cloud scene from `items` whose footprint contains
     (lon, lat). Returns None if no scene covers the point."""
-    from shapely.geometry import shape, Point
+    from shapely.geometry import Point, shape
     pt = Point(lon, lat)
     for it in items:                                  # already sorted by cloud cover
         if shape(it.geometry).contains(pt):
@@ -380,8 +378,8 @@ def main():
     processed_root = repo_root / args.processed
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    from pystac_client import Client
     import planetary_computer
+    from pystac_client import Client
     client = Client.open(STAC_URL, modifier=planetary_computer.sign_inplace)
 
     if args.conus:

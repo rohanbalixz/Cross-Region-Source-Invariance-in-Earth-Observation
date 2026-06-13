@@ -10,19 +10,26 @@ imagery penalty is a property of the input, not of using a natural-image backbon
 
 Usage: python -m scripts.eval.prithvi_seg_matrix --seeds 20260525 1 2
 """
-import argparse, glob, json, sys
+import argparse
+import glob
+import json
+import sys
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
+from scipy.stats import spearmanr
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 L8DIR = REPO / "data/raw/landsat8"; PRITHVI = REPO / "models/prithvi"
 sys.path.insert(0, str(PRITHVI))
 from prithvi_mae import PrithviViT
+
 from scripts.acquire.regions import city_by_name
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH
 from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import TARGET_EPOCH, load_city_rasters
 
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 SEED = 20260525
@@ -177,7 +184,7 @@ def main(seeds):
     print(f"\n=== Prithvi-EO frozen, {len(seeds)} seeds ===")
     print(f"  retention {agg['retention']['mean']:.3f}+/-{agg['retention']['sd']:.3f}  "
           f"gap {agg['home_field_gap']['mean']:+.3f}  src_inv {agg['source_inv']['mean']:.2f}", flush=True)
-    print(f"  compare: from-scratch U-Net 0.82 ; frozen DINOv2 0.78 ; temporal ~1.0", flush=True)
+    print("  compare: from-scratch U-Net 0.82 ; frozen DINOv2 0.78 ; temporal ~1.0", flush=True)
     print(f"saved {fn}", flush=True)
 
 

@@ -38,7 +38,6 @@ from pyproj import Geod
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
 
-
 # Map each city → (source, path/url). Geofabrik gives country-level files,
 # BBBike gives smaller city extracts when available.
 GEOFABRIK = "https://download.geofabrik.de/{}"

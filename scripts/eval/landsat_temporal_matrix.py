@@ -16,14 +16,19 @@ deflation. If source-INVARIANT, temporality genuinely overcomes raw appearance.
 
 Usage: python -m scripts.eval.landsat_temporal_matrix
 """
-import glob, json
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
-from scripts.acquire.regions import CITIES, city_by_name
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH
+from scipy.stats import spearmanr
+
+from scripts.acquire.regions import city_by_name
 from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import TARGET_EPOCH, load_city_rasters
 from scripts.eval.multitask_difficulty import SegUNet
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"

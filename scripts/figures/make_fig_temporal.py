@@ -9,13 +9,17 @@ above every trained model's 0.34 -- the temporal source-invariance is shallow.
 
 All rasters are real benchmark data; the prediction is the closed-form line, not
 a learned model."""
-import numpy as np, matplotlib
+import matplotlib
+import numpy as np
+
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
+import os as _os
+import sys as _sys
+
 import matplotlib.gridspec as gridspec
-import rasterio, os
-import os as _os, sys as _sys
+import matplotlib.pyplot as plt
+import rasterio
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()
@@ -73,6 +77,7 @@ for j, (title, img, cmap) in enumerate(panels):
         sp.set_visible(True); sp.set_linewidth(0.9); sp.set_edgecolor(ec)
 
 from matplotlib.patches import Patch
+
 panel_ax[-1].legend(handles=[Patch(fc=[0,0.62,0.45], label="hit"),
                       Patch(fc=[0.84,0.37,0], label="false alarm"),
                       Patch(fc=[0.34,0.71,0.91], label="miss")],

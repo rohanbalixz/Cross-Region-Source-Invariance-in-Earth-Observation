@@ -21,12 +21,19 @@ Usage: python -m scripts.eval.morph_baseline
 """
 import json
 from pathlib import Path
+
 import numpy as np
 from scipy import ndimage
+
 from scripts.acquire.regions import CITIES
-from scripts.eval.cross_region_eval import (
-    load_city_rasters, fom_metrics, EVAL_MASK_THRESH, TARGET_EPOCH, TRAIN_EPOCHS)
 from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import (
+    EVAL_MASK_THRESH,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    fom_metrics,
+    load_city_rasters,
+)
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"; T = 0.01
 SRC = ["south_asia", "ssa", "east_asia", "andes", "mena", "sea", "eeca", "oceania"]

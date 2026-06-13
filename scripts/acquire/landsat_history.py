@@ -110,8 +110,8 @@ def main():
     a = p.parse_args()
     out_dir = REPO / "data/raw/landsat_history"; out_dir.mkdir(parents=True, exist_ok=True)
     processed_root = REPO / "data/processed"
-    from pystac_client import Client
     import planetary_computer
+    from pystac_client import Client
     client = Client.open(L8.STAC_URL, modifier=planetary_computer.sign_inplace)
     cities = [c for c in CITIES if c.region != "conus"]
     if a.city:

@@ -12,16 +12,25 @@ deflation holds even with change training.
 
 Usage: python -m scripts.eval.change_cnn_matrix
 """
-import glob, json
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
+
 from scripts.acquire.regions import CITIES, city_by_name
-from scripts.eval.models import SimpleCNN
+from scripts.common import TILE_PX, enumerate_tiles_from_grid
 from scripts.eval import cross_region_train as crt
 from scripts.eval.cross_region_eval import (
-    load_city_rasters, build_input_tensor, fom_metrics,
-    EVAL_MASK_THRESH, TARGET_EPOCH, TRAIN_EPOCHS)
-from scripts.common import TILE_PX, enumerate_tiles_from_grid
+    EVAL_MASK_THRESH,
+    TARGET_EPOCH,
+    TRAIN_EPOCHS,
+    build_input_tensor,
+    fom_metrics,
+    load_city_rasters,
+)
+from scripts.eval.models import SimpleCNN
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

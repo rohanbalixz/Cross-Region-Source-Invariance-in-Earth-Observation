@@ -32,13 +32,11 @@ from pathlib import Path
 # Never let a stalled DEM tile read block forever (raises after 120s of silence).
 socket.setdefaulttimeout(120)
 
-import numpy as np
 import rasterio
 from rasterio.merge import merge
 from rasterio.windows import from_bounds
 
 from scripts.acquire.regions import CITIES, City
-
 
 COP_DEM_URL = (
     "https://copernicus-dem-30m.s3.amazonaws.com/"

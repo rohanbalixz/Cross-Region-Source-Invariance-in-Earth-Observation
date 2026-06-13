@@ -10,13 +10,17 @@ harmonised-product-transfers / raw-sensor-fails dissociation holds off built-up.
 Run: python -m scripts.acquire.modis_lst_aligned [--region ssa] [--city nairobi]
 """
 from __future__ import annotations
+
 import argparse
 from pathlib import Path
-import numpy as np, rasterio
+
+import numpy as np
+import rasterio
 from rasterio.warp import transform as warp_transform
 from rasterio.windows import from_bounds as window_from_bounds
-from scripts.acquire.regions import CITIES, City
+
 from scripts.acquire.landsat8 import _load_tile_centers, _utm_centroid_to_lonlat
+from scripts.acquire.regions import CITIES, City
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
 OUT = REPO / "data/raw/lst_aligned"
@@ -98,8 +102,8 @@ def main():
     p.add_argument("--region", action="append", default=[])
     p.add_argument("--city", action="append", default=[])
     a = p.parse_args()
-    from pystac_client import Client
     import planetary_computer
+    from pystac_client import Client
     client = Client.open(STAC_URL, modifier=planetary_computer.sign_inplace)
     regions = a.region or REGIONS
     cities = [c for c in CITIES if c.name in a.city] if a.city else \

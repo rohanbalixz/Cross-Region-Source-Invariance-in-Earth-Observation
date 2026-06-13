@@ -25,11 +25,10 @@ from __future__ import annotations
 
 import argparse
 import gc
-import json
 import sys
 import warnings
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
 
 import numpy as np
 import rasterio
@@ -39,7 +38,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
 from scripts.common import (
     TILE_PX,
-    enumerate_tiles_from_grid, tile_ref_to_dict, write_tile_records,
+    enumerate_tiles_from_grid,
+    tile_ref_to_dict,
+    write_tile_records,
 )
 from scripts.eval.models import load_models
 

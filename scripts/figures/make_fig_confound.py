@@ -3,9 +3,14 @@
 definition as the original n=8 panel). Data: results/metrics/confound_n20_allpix.json.
 """
 import matplotlib; matplotlib.use("Agg")
-import matplotlib.pyplot as plt, numpy as np, json
+import json
+import os as _os
+import sys as _sys
 from pathlib import Path
-import os as _os, sys as _sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+
 _REPO = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # for figstyle
 import figstyle as fs; fs.use_style()

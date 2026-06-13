@@ -13,11 +13,16 @@ back the lost fifth.
 
 Usage: python -m scripts.eval.fm_seg_finetune --n-unfreeze 4 --epochs 12
 """
-import argparse, copy, json
-from pathlib import Path
-import numpy as np, torch, torch.nn as nn
+import argparse
+import copy
+import json
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.stats import spearmanr
-import scripts.eval.fm_seg_matrix as fz   # reuses ENC (pretrained), load_region, Dec, IMA, IMS, REGIONS, SEED
+
+import scripts.eval.fm_seg_matrix as fz  # reuses ENC (pretrained), load_region, Dec, IMA, IMS, REGIONS, SEED
 
 REPO = fz.REPO; DEV = fz.DEV; REGIONS = fz.REGIONS; SEED = fz.SEED
 
@@ -90,7 +95,7 @@ def main(n_unfreeze, epochs):
     print(f"=== FINE-TUNED DINOv2 (last {n_unfreeze} blocks) built-up seg, {len(rr)}x{len(rr)} ===")
     print(f"in-region IoU={diag:.3f}  out-of-region={off:.3f}  gap={diag-off:+.4f}  "
           f"retention={retention:.3f}  source-inv={inv:.3f}", flush=True)
-    print(f"compare: frozen DINOv2 retention 0.78 (gap +0.142), from-scratch U-Net retention 0.82 (gap +0.126)")
+    print("compare: frozen DINOv2 retention 0.78 (gap +0.142), from-scratch U-Net retention 0.82 (gap +0.126)")
     json.dump({"encoder": f"DINOv2-ViT-S fine-tuned (last {n_unfreeze} blocks)",
                "task": "built-up binary seg", "n_unfreeze_blocks": n_unfreeze, "epochs": epochs,
                "in_region": round(float(diag), 4), "out_region": round(float(off), 4),

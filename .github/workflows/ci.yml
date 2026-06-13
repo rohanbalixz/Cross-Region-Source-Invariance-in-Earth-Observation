@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install (smoke-test deps only)
+        run: pip install -r requirements-verify.txt ruff
+      - name: Lint (pyflakes)
+        run: ruff check scripts verify.py
+      - name: Compile all sources
+        run: python -m compileall -q scripts verify.py
+      - name: Smoke test (re-derive headline results from receipts)
+        run: python verify.py

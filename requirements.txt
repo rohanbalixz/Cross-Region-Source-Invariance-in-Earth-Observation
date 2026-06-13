@@ -1,26 +1,28 @@
+# Pinned to the versions used for the results in this repository.
 # Core scientific stack
-numpy>=1.24
-scipy>=1.10
-scikit-learn>=1.3
-matplotlib>=3.7
+numpy==2.2.6
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.10.7
 
 # Geospatial I/O and analysis
-rasterio>=1.3
-rioxarray>=0.15
-geopandas>=0.14
-shapely>=2.0
-pyproj>=3.5
-pyogrio>=0.7
-networkx>=3.0
-osmnx>=1.6
+rasterio==1.4.3
+rioxarray==0.22.0
+geopandas==1.1.1
+shapely==2.1.2
+pyproj==3.7.2
+pyogrio==0.11.1
+networkx==3.5
+osmnx==2.0.6
 
 # Data acquisition (Microsoft Planetary Computer; no credentials required)
-pystac-client>=0.7
-planetary-computer>=1.0
-odc-stac>=0.3
+pystac-client==0.9.0
+planetary-computer==1.0.0
+odc-stac==0.5.2
 
-# Deep learning (training the transfer matrices; foundation-model controls)
-torch>=2.1
+# Deep learning (training the transfer matrices; foundation-model controls).
+# On GPU/Apple-Silicon, install the platform build per https://pytorch.org first.
+torch==2.9.0
 
-# The Prithvi-EO foundation-model control additionally requires the `prithvi_mae`
-# package and HLS weights from the official IBM/NASA release; see the README.
+# The Prithvi-EO control additionally needs the `prithvi_mae` package and HLS
+# weights from the official NASA/IBM release (see scripts/eval/prithvi_encoder.py).

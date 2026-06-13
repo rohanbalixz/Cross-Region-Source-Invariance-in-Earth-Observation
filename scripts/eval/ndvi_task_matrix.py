@@ -16,11 +16,17 @@ diagonal mean for each score.
 
 Usage: python -m scripts.eval.ndvi_task_matrix
 """
-import json, glob
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr, pearsonr
+
+import numpy as np
+import torch
+import torch.nn as nn
+from scipy.stats import pearsonr, spearmanr
+
 from scripts.eval.models import SimpleCNN
+
 REPO = Path(__file__).resolve().parents[2]
 DEV = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 REGIONS = ["south_asia","ssa","east_asia","andes","mena","sea","eeca","oceania"]

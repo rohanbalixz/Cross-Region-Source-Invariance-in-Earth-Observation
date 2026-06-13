@@ -6,13 +6,16 @@ Full:  python -m scripts.acquire.worldcover_s2 --city <name>
 
 Outputs: data/hardtask/<region>/<city>/{s2.tif, landcover.tif}
 """
-import argparse, time
+import argparse
+import time
 from pathlib import Path
+
 import numpy as np
-import rioxarray  # noqa: F401  (registers .rio accessor)
 import odc.stac
-from pystac_client import Client
 import planetary_computer as pc
+import rioxarray  # noqa: F401  (registers .rio accessor)
+from pystac_client import Client
+
 from scripts.acquire.regions import city_by_name
 
 

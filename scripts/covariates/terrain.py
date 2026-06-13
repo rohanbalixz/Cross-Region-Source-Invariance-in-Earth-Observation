@@ -28,22 +28,22 @@ Each record:
 from __future__ import annotations
 
 import argparse
-import math
 import sys
 from pathlib import Path
 
 import numpy as np
 import rasterio
 from rasterio.crs import CRS
-from rasterio.transform import from_bounds
 from rasterio.warp import Resampling, reproject
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from scripts.acquire.regions import CITIES, City
 from scripts.common import (
-    TILE_PX, TILE_RES_M,
-    enumerate_tiles_from_grid, tile_ref_to_dict, write_tile_records,
-    utm_crs_for_bbox,
+    TILE_PX,
+    TILE_RES_M,
+    enumerate_tiles_from_grid,
+    tile_ref_to_dict,
+    write_tile_records,
 )
 
 

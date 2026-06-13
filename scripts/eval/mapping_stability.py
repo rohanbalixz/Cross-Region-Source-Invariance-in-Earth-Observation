@@ -16,21 +16,23 @@ not the CNN -- i.e. the retention "spectrum" is measured, not asserted.
 
 Run:  python -m scripts.eval.mapping_stability
 """
-import json, glob
+import glob
+import json
+import sys
 from pathlib import Path
+
 import numpy as np
 from scipy.ndimage import zoom
+from scipy.stats import pearsonr, spearmanr
 from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.model_selection import KFold
 from sklearn.metrics import roc_auc_score
-from scipy.stats import spearmanr, pearsonr
+from sklearn.model_selection import KFold
 
-import sys
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
-from scripts.common import TILE_PX, enumerate_tiles_from_grid
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH
 from scripts.acquire.regions import city_by_name
+from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import TARGET_EPOCH, load_city_rasters
 
 PROC = REPO / "data/processed"
 GRID, CENTER_PX, BU_THRESH, DOWN = 64, 27, 0.1, 16

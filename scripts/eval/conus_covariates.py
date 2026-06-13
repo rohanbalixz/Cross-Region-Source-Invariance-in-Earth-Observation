@@ -25,25 +25,24 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 
-import subprocess
-
 import numpy as np
 import rasterio
+from pyproj import Geod, Transformer
 from rasterio.merge import merge as rio_merge
 from rasterio.transform import from_origin
-from rasterio.warp import reproject, Resampling
-from pyproj import Transformer, Geod
+from rasterio.warp import Resampling, reproject
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from scripts.acquire.osm_pbf import _SNAP, DRIVE_HIGHWAY, _iter_linestrings
+from scripts.acquire.srtm import fetch_one, tiles_covering_bbox
 from scripts.common import TILE_PX, TILE_RES_M
 from scripts.covariates.settlement import BUILTUP_THRESHOLD, patch_stats
 from scripts.covariates.terrain import compute_slope_deg, compute_tri
 from scripts.covariates.transport import edge_length_in_bbox, orientation_entropy
-from scripts.acquire.srtm import tiles_covering_bbox, fetch_one
-from scripts.acquire.osm_pbf import DRIVE_HIGHWAY, _iter_linestrings, _SNAP
 
 REPO = Path(__file__).resolve().parents[2]
 EVAL_METRICS = REPO / "data/processed/conus/conus/eval_metrics.json"

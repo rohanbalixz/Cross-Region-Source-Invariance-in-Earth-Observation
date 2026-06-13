@@ -30,7 +30,6 @@ from pathlib import Path
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
@@ -181,9 +180,9 @@ def train_transformer(
     n_train_tiles: int, n_val_tiles: int, batch_size: int, n_epochs: int,
     lr: float, seed: int, device: str,
 ) -> None:
-    from scripts.eval.cross_region_eval import TRAIN_EPOCHS, TARGET_EPOCH
-    from scripts.common import TILE_PX, TILE_STRIDE, TILE_BUILTUP_THRESHOLD
+    from scripts.common import TILE_BUILTUP_THRESHOLD, TILE_PX, TILE_STRIDE
     from scripts.eval.conus_baseline import load_conus_rasters
+    from scripts.eval.cross_region_eval import TARGET_EPOCH, TRAIN_EPOCHS
 
     print(f"loading CONUS rasters from {geotiff_root} ...", flush=True)
     bu, vol, pop, _, _ = load_conus_rasters(geotiff_root)

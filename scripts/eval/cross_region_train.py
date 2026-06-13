@@ -6,15 +6,23 @@ Usage:
     python -m scripts.eval.cross_region_train --source east_asia --arch cnn
 Outputs: results/transfer_matrix/weights/<source>/best_<arch>_3ch.pth
 """
-import argparse, glob
+import argparse
+import glob
 from pathlib import Path
-import numpy as np, torch
+
+import numpy as np
+import torch
 import torch.nn as nn
-from scripts.acquire.regions import REGIONS, city_by_name
-from scripts.eval.models import SimpleCNN, SimpleUNet, ConvLSTMModel
+
+from scripts.acquire.regions import city_by_name
 from scripts.eval.cross_region_eval import (
-    load_city_rasters, build_input_tensor, TRAIN_EPOCHS, TARGET_EPOCH, TILE_PX,
+    TARGET_EPOCH,
+    TILE_PX,
+    build_input_tensor,
+    load_city_rasters,
 )
+from scripts.eval.models import ConvLSTMModel, SimpleCNN, SimpleUNet
+
 REPO = Path(__file__).resolve().parents[2]
 ARCH = {"cnn": SimpleCNN, "unet": SimpleUNet, "convlstm": ConvLSTMModel}
 CKPT = {"cnn": "best_cnn_3ch.pth", "unet": "best_unet_3ch.pth", "convlstm": "best_3ch_mc_model.pth"}

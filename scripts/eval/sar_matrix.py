@@ -12,14 +12,19 @@ across modalities, optical AND radar.
 
 Usage: python -m scripts.eval.sar_matrix --seeds 20260525 1 2 3 4 --grid 64
 """
-import glob, json
+import glob
+import json
 from pathlib import Path
-import numpy as np, torch, torch.nn as nn
-from scipy.stats import spearmanr
+
+import numpy as np
+import torch
+import torch.nn as nn
 from scipy.ndimage import zoom
+from scipy.stats import spearmanr
+
 from scripts.acquire.regions import city_by_name
-from scripts.eval.cross_region_eval import load_city_rasters, TARGET_EPOCH
 from scripts.common import TILE_PX, enumerate_tiles_from_grid
+from scripts.eval.cross_region_eval import TARGET_EPOCH, load_city_rasters
 from scripts.eval.multitask_difficulty import SegUNet
 
 REPO = Path(__file__).resolve().parents[2]; PROC = REPO / "data/processed"
