@@ -1,0 +1,97 @@
+{
+ "arch": "cnn",
+ "seed": 20260525,
+ "n_folds": 8,
+ "per_region": {
+  "south_asia": {
+   "in_region": 0.3934874894276701,
+   "single_source_out": 0.3900396569959194,
+   "multi_source_loro": 0.27346073846663926,
+   "retention_single": 0.9912377584436914,
+   "retention_loro": 0.694966792627612,
+   "loro_minus_single": -0.11657891852928015
+  },
+  "ssa": {
+   "in_region": 0.38888823110154874,
+   "single_source_out": 0.3889950943621439,
+   "multi_source_loro": 0.22198261014993398,
+   "retention_single": 1.0002747917063277,
+   "retention_loro": 0.5708133916039454,
+   "loro_minus_single": -0.16701248421220993
+  },
+  "east_asia": {
+   "in_region": 0.4209253684432819,
+   "single_source_out": 0.42891103257309576,
+   "multi_source_loro": 0.30413708724856725,
+   "retention_single": 1.0189716864995508,
+   "retention_loro": 0.7225439710924636,
+   "loro_minus_single": -0.12477394532452851
+  },
+  "andes": {
+   "in_region": 0.23765559271471526,
+   "single_source_out": 0.24200364874937694,
+   "multi_source_loro": 0.33703456524933356,
+   "retention_single": 1.0182956183988532,
+   "retention_loro": 1.4181638285866642,
+   "loro_minus_single": 0.09503091649995662
+  },
+  "mena": {
+   "in_region": 0.32884745880119737,
+   "single_source_out": 0.3302682191917496,
+   "multi_source_loro": 0.3015398683692646,
+   "retention_single": 1.004320423809056,
+   "retention_loro": 0.9169597036526246,
+   "loro_minus_single": -0.028728350822484983
+  },
+  "sea": {
+   "in_region": 0.34427779620390947,
+   "single_source_out": 0.34237664255923006,
+   "multi_source_loro": 0.23749148296236913,
+   "retention_single": 0.994477849964064,
+   "retention_loro": 0.689825151610147,
+   "loro_minus_single": -0.10488515959686093
+  },
+  "eeca": {
+   "in_region": 0.3635099731643962,
+   "single_source_out": 0.36340653309905135,
+   "multi_source_loro": 0.29800685565847146,
+   "retention_single": 0.9997154409150197,
+   "retention_loro": 0.819803795379498,
+   "loro_minus_single": -0.0653996774405799
+  },
+  "oceania": {
+   "in_region": 0.22890002560383202,
+   "single_source_out": 0.23847942759004193,
+   "multi_source_loro": 0.18232564330480114,
+   "retention_single": 1.041849720029256,
+   "retention_loro": 0.7965295889497219,
+   "loro_minus_single": -0.05615378428524079
+  }
+ },
+ "summary": {
+  "in_region": {
+   "mean": 0.3383114919325689,
+   "sd": 0.07100307540059039
+  },
+  "single_source_out": {
+   "mean": 0.3405600318900761,
+   "sd": 0.06903941155129927
+  },
+  "multi_source_loro": {
+   "mean": 0.26949735642617256,
+   "sd": 0.05140503402358367
+  },
+  "retention_single": {
+   "mean": 1.0086429112207274,
+   "sd": 0.016795185777736883
+  },
+  "retention_loro": {
+   "mean": 0.8287007779378346,
+   "sd": 0.25948213751698873
+  },
+  "loro_minus_single": {
+   "mean": -0.07106267546390357,
+   "sd": 0.08012541601557231
+  }
+ }
+}

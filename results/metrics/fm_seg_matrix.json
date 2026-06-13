@@ -1,0 +1,9 @@
+{
+ "encoder": "DINOv2-ViT-S frozen",
+ "task": "built-up binary seg",
+ "in_region": 0.6496,
+ "out_region": 0.508,
+ "home_field_gap": 0.1416,
+ "source_inv": 0.245,
+ "fromscratch_unet_gap": 0.126
+}

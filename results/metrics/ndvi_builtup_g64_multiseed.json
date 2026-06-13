@@ -1,0 +1,181 @@
+{
+ "input": "MODIS NDVI 3-year (uniform measurement)",
+ "target": "GHSL built-up 2015",
+ "grid": 64,
+ "seeds": [
+  20260525,
+  1,
+  2,
+  3,
+  4
+ ],
+ "per_seed": {
+  "20260525": {
+   "in_region": 0.20586238928120898,
+   "out_region": 0.12821271650001523,
+   "home_field_gap": 0.07764967278119375,
+   "retention": 0.6228078715479983,
+   "source_inv": NaN,
+   "diag": {
+    "south_asia": 0.0,
+    "ssa": 0.0,
+    "east_asia": 0.402,
+    "andes": 0.0,
+    "mena": 0.009,
+    "sea": 0.247,
+    "eeca": 0.044,
+    "oceania": 0.104,
+    "weur": 0.42,
+    "latam": 0.501,
+    "camcar": 0.45,
+    "canada": 0.494,
+    "nordic": 0.27,
+    "central_europe": 0.175,
+    "china_interior": 0.144,
+    "south_asia_2": 0.0,
+    "southern_africa": 0.002,
+    "mediterranean": 0.0,
+    "brazil_north": 0.483,
+    "japan_korea_2": 0.373
+   }
+  },
+  "1": {
+   "in_region": 0.17924025954978406,
+   "out_region": 0.11917639982670954,
+   "home_field_gap": 0.06006385972307453,
+   "retention": 0.6648974963886851,
+   "source_inv": NaN,
+   "diag": {
+    "south_asia": 0.0,
+    "ssa": 0.096,
+    "east_asia": 0.367,
+    "andes": 0.009,
+    "mena": 0.016,
+    "sea": 0.265,
+    "eeca": 0.0,
+    "oceania": 0.182,
+    "weur": 0.41,
+    "latam": 0.19,
+    "camcar": 0.273,
+    "canada": 0.508,
+    "nordic": 0.017,
+    "central_europe": 0.197,
+    "china_interior": 0.22,
+    "south_asia_2": 0.0,
+    "southern_africa": 0.0,
+    "mediterranean": 0.0,
+    "brazil_north": 0.504,
+    "japan_korea_2": 0.331
+   }
+  },
+  "2": {
+   "in_region": 0.1987466285364671,
+   "out_region": 0.1408953818402067,
+   "home_field_gap": 0.057851246696260405,
+   "retention": 0.7089196072292339,
+   "source_inv": NaN,
+   "diag": {
+    "south_asia": 0.0,
+    "ssa": 0.02,
+    "east_asia": 0.386,
+    "andes": 0.0,
+    "mena": 0.195,
+    "sea": 0.098,
+    "eeca": 0.171,
+    "oceania": 0.204,
+    "weur": 0.355,
+    "latam": 0.461,
+    "camcar": 0.39,
+    "canada": 0.361,
+    "nordic": 0.348,
+    "central_europe": 0.017,
+    "china_interior": 0.177,
+    "south_asia_2": 0.0,
+    "southern_africa": 0.206,
+    "mediterranean": 0.0,
+    "brazil_north": 0.207,
+    "japan_korea_2": 0.378
+   }
+  },
+  "3": {
+   "in_region": 0.20445821648170037,
+   "out_region": 0.14305555824342278,
+   "home_field_gap": 0.06140265823827759,
+   "retention": 0.6996811412381008,
+   "source_inv": NaN,
+   "diag": {
+    "south_asia": 0.0,
+    "ssa": 0.13,
+    "east_asia": 0.37,
+    "andes": 0.012,
+    "mena": 0.0,
+    "sea": 0.342,
+    "eeca": 0.302,
+    "oceania": 0.173,
+    "weur": 0.3,
+    "latam": 0.388,
+    "camcar": 0.061,
+    "canada": 0.486,
+    "nordic": 0.32,
+    "central_europe": 0.31,
+    "china_interior": 0.192,
+    "south_asia_2": 0.0,
+    "southern_africa": 0.062,
+    "mediterranean": 0.0,
+    "brazil_north": 0.303,
+    "japan_korea_2": 0.341
+   }
+  },
+  "4": {
+   "in_region": 0.21020590639142295,
+   "out_region": 0.14734778978751537,
+   "home_field_gap": 0.06285811660390758,
+   "retention": 0.700968837255886,
+   "source_inv": NaN,
+   "diag": {
+    "south_asia": 0.0,
+    "ssa": 0.125,
+    "east_asia": 0.36,
+    "andes": 0.0,
+    "mena": 0.017,
+    "sea": 0.32,
+    "eeca": 0.082,
+    "oceania": 0.281,
+    "weur": 0.249,
+    "latam": 0.338,
+    "camcar": 0.371,
+    "canada": 0.156,
+    "nordic": 0.344,
+    "central_europe": 0.298,
+    "china_interior": 0.166,
+    "south_asia_2": 0.0,
+    "southern_africa": 0.16,
+    "mediterranean": 0.007,
+    "brazil_north": 0.513,
+    "japan_korea_2": 0.417
+   }
+  }
+ },
+ "aggregate": {
+  "in_region": {
+   "mean": 0.1997026800481167,
+   "sd": 0.012150098717393384
+  },
+  "out_region": {
+   "mean": 0.13573756923957392,
+   "sd": 0.011681705313535986
+  },
+  "home_field_gap": {
+   "mean": 0.06396511080854277,
+   "sd": 0.007868575635758374
+  },
+  "retention": {
+   "mean": 0.6794549907319808,
+   "sd": 0.03591978262489893
+  },
+  "source_inv": {
+   "mean": NaN,
+   "sd": NaN
+  }
+ }
+}

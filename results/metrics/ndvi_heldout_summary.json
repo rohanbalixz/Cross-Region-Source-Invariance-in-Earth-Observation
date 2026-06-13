@@ -1,0 +1,31 @@
+{
+ "task": "ndvi_nowcast(held-out, non-urban, non-monotonic)",
+ "n_regions": 8,
+ "preregistered": "retention ~0.99 source-invariant",
+ "field_corr": {
+  "in": 0.968,
+  "out": 0.961,
+  "retention": 0.993,
+  "source_inv": 0.824
+ },
+ "field_r2": {
+  "in": 0.902,
+  "out": 0.882,
+  "retention": 0.977,
+  "source_inv": 0.813
+ },
+ "change_dcorr": {
+  "in": 0.543,
+  "out": 0.463,
+  "retention": 0.852,
+  "source_inv": 0.593
+ },
+ "persist_skill": {
+  "in": -0.091,
+  "out": -0.373,
+  "retention": 4.099,
+  "source_inv": 0.478
+ },
+ "reading": "field-level retention 0.98-0.99 (every target >=0.98) confirms endogenous source-invariance on a non-urban target; model does NOT beat persistence in MSE (NDVI highly autocorrelated), so field invariance is partly trivial; persistence-proof change-correlation transfers at 0.85 (src-inv 0.59), above imagery 0.25-0.47 but below urban temporal -> temporal regime is a gradient",
+ "honest_status": "law direction confirmed + extended beyond urban growth; clean 0.99 NOT replicated on change metric"
+}

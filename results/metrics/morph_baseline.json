@@ -1,0 +1,108 @@
+{
+ "per_region": {
+  "south_asia": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.4989425495169322,
+   "best_morph": 0.3009813579872689,
+   "best_morph_cfg": "morph_r3_t0.01",
+   "best_trivial": 0.4989425495169322,
+   "cnn_in": 0.3934874894276701,
+   "cnn_out": 0.3900396569959194,
+   "margin_in": -0.10545506008926209,
+   "margin_out": -0.10890289252101276
+  },
+  "ssa": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.5000818323556521,
+   "best_morph": 0.3143583162217659,
+   "best_morph_cfg": "morph_r3_t0.01",
+   "best_trivial": 0.5000818323556521,
+   "cnn_in": 0.38888823110154874,
+   "cnn_out": 0.3889950943621439,
+   "margin_in": -0.11119360125410332,
+   "margin_out": -0.11108673799350816
+  },
+  "east_asia": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.6409568051386104,
+   "best_morph": 0.20801586314713372,
+   "best_morph_cfg": "morph_r3_t0.1",
+   "best_trivial": 0.6409568051386104,
+   "cnn_in": 0.4209253684432819,
+   "cnn_out": 0.42891103257309576,
+   "margin_in": -0.22003143669532854,
+   "margin_out": -0.21204577256551466
+  },
+  "andes": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.6624843432816482,
+   "best_morph": 0.0970415633129651,
+   "best_morph_cfg": "morph_r3_t0.01",
+   "best_trivial": 0.6624843432816482,
+   "cnn_in": 0.23765559271471526,
+   "cnn_out": 0.24200364874937694,
+   "margin_in": -0.4248287505669329,
+   "margin_out": -0.4204806945322712
+  },
+  "mena": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.5271234599727477,
+   "best_morph": 0.22388934474270308,
+   "best_morph_cfg": "morph_r3_t0.01",
+   "best_trivial": 0.5271234599727477,
+   "cnn_in": 0.32884745880119737,
+   "cnn_out": 0.3302682191917496,
+   "margin_in": -0.1982760011715503,
+   "margin_out": -0.1968552407809981
+  },
+  "sea": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.6028596332332992,
+   "best_morph": 0.19298329674597361,
+   "best_morph_cfg": "morph_r3_t0.1",
+   "best_trivial": 0.6028596332332992,
+   "cnn_in": 0.34427779620390947,
+   "cnn_out": 0.34237664255923006,
+   "margin_in": -0.2585818370293897,
+   "margin_out": -0.2604829906740691
+  },
+  "eeca": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.6066658361587437,
+   "best_morph": 0.15143156260292664,
+   "best_morph_cfg": "morph_r3_t0.1",
+   "best_trivial": 0.6066658361587437,
+   "cnn_in": 0.3635099731643962,
+   "cnn_out": 0.36340653309905135,
+   "margin_in": -0.2431558629943475,
+   "margin_out": -0.24325930305969234
+  },
+  "oceania": {
+   "n_cities": 11,
+   "persistence": 0.0,
+   "linext": 0.4524735212481337,
+   "best_morph": 0.330059483491176,
+   "best_morph_cfg": "morph_r3_t0.01",
+   "best_trivial": 0.4524735212481337,
+   "cnn_in": 0.22890002560383202,
+   "cnn_out": 0.23847942759004193,
+   "margin_in": -0.2235734956443017,
+   "margin_out": -0.2139940936580918
+  }
+ },
+ "summary": {
+  "best_trivial_mean": 0.5614484976132208,
+  "cnn_in_mean": 0.3383114919325689,
+  "cnn_out_mean": 0.3405600318900761,
+  "margin_in_mean": -0.223137005680652,
+  "margin_out_mean": -0.22088846572314477,
+  "margin_retention": null
+ }
+}

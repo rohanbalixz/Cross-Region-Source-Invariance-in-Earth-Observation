@@ -1,0 +1,27 @@
+# Data (third-party EO products; acquire via scripts/acquire — not redistributed)
+data/
+# Model checkpoints / foundation-model weights
+models/
+*.pt
+*.pth
+*.ckpt
+# Trained transfer-matrix weights (large; regenerate via scripts/eval)
+results/transfer_matrix/
+results/**/weights*/
+# Environments
+.venv/
+venv/
+env/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+# Run-time outputs
+logs/
+cache/
+*.log
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

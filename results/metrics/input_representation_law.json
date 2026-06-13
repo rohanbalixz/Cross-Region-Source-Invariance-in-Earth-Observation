@@ -1,0 +1,33 @@
+{
+ "law": "input representation governs cross-region source-invariance",
+ "temporal_tasks": {
+  "builtup_nowcast": {
+   "gap": 0.002,
+   "src_inv": 0.97
+  },
+  "volume_nowcast": {
+   "gap": 0.001,
+   "src_inv": 0.98
+  },
+  "population_nowcast": {
+   "gap": 0.002,
+   "src_inv": 0.99
+  }
+ },
+ "imagery_tasks": {
+  "water_seg": 0.191,
+  "builtup_seg": 0.126,
+  "crop_seg": 0.101,
+  "multiclass11": 0.074,
+  "tree_seg": 0.057
+ },
+ "matched_metric_test": {
+  "target": "built-up extent",
+  "metric": "IoU",
+  "temporal_gap": -0.007,
+  "imagery_gap": 0.126,
+  "conclusion": "metric confound defused; input alone flips source-invariance"
+ },
+ "persistence_check": "FoM-on-change (persistence scores 0) ALSO shows temporal source-invariance -> not a triviality artefact",
+ "separation": "temporal gaps <=0.002, imagery gaps >=0.057; 1-2 orders of magnitude, no overlap; NOT explained by difficulty (water easiest=biggest gap)"
+}

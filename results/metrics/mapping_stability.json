@@ -1,0 +1,62 @@
+{
+  "per_input": {
+    "ghsl_history": {
+      "local_auc": 0.998,
+      "global_auc": 0.9982,
+      "stability": 1.0,
+      "n_regions": 20,
+      "cnn_retention": 1.0
+    },
+    "sar": {
+      "local_auc": 0.8129,
+      "global_auc": 0.8071,
+      "stability": 0.9814,
+      "n_regions": 20,
+      "cnn_retention": 0.899
+    },
+    "worldcover": {
+      "local_auc": 0.918,
+      "global_auc": 0.9119,
+      "stability": 0.9854,
+      "n_regions": 20,
+      "cnn_retention": 0.817
+    },
+    "ndvi": {
+      "local_auc": 0.7649,
+      "global_auc": 0.6976,
+      "stability": 0.7459,
+      "n_regions": 20,
+      "cnn_retention": 0.679
+    },
+    "ndbi": {
+      "local_auc": 0.746,
+      "global_auc": 0.7153,
+      "stability": 0.8753,
+      "n_regions": 20,
+      "cnn_retention": 0.595
+    },
+    "raw_landsat": {
+      "local_auc": 0.8783,
+      "global_auc": 0.8271,
+      "stability": 0.8647,
+      "n_regions": 20,
+      "cnn_retention": 0.55
+    }
+  },
+  "n_inputs": 6,
+  "spearman_stability_vs_retention": 0.771,
+  "spearman_p": 0.07239650145772594,
+  "pearson_stability_vs_retention": 0.731,
+  "nondegenerate": {
+    "inputs": [
+      "ghsl_history",
+      "sar",
+      "worldcover",
+      "ndbi",
+      "raw_landsat"
+    ],
+    "spearman": 0.9,
+    "spearman_p": 0.037,
+    "pearson": 0.965
+  }
+}

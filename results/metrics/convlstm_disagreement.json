@@ -1,0 +1,693 @@
+{
+  "description": "Investigation of the Sprint D ConvLSTM rank-disagreement. Tests four hypotheses for why ConvLSTM orders regions differently from CNN/U-Net/Transformer. See the per-receipt interpretation fields for the verdict on each hypothesis.",
+  "per_region_per_model": {
+    "andes": {
+      "cnn": {
+        "n_tiles": 120,
+        "mean_fom": 0.2862556755715116,
+        "std_fom": 0.11652878661415768,
+        "per_city_mean": {
+          "arequipa": 0.4950313344418701,
+          "bogota": 0.2527267285865415,
+          "cali": 0.2389230387888439,
+          "caracas": 0.31869396577510506,
+          "cochabamba": 0.229181001119115,
+          "cusco": 0.1931057914382986,
+          "la_paz": 0.38761415403597954,
+          "lima": 0.23829565054659574,
+          "medellin": 0.19015576824677627,
+          "quito": 0.2146401648578298,
+          "santiago": 0.43727655194473686
+        },
+        "between_city_std": 0.09976522790238204
+      },
+      "unet": {
+        "n_tiles": 120,
+        "mean_fom": 0.28142562733889337,
+        "std_fom": 0.10208966425429775,
+        "per_city_mean": {
+          "arequipa": 0.43951103536394087,
+          "bogota": 0.2551683835667312,
+          "cali": 0.2506667343455262,
+          "caracas": 0.30486479767436064,
+          "cochabamba": 0.23364055619227286,
+          "cusco": 0.17728345818354097,
+          "la_paz": 0.37056972727260806,
+          "lima": 0.2553340651018866,
+          "medellin": 0.20346110138547935,
+          "quito": 0.2125892956439508,
+          "santiago": 0.40415795341502847
+        },
+        "between_city_std": 0.08246231103567742
+      },
+      "convlstm": {
+        "n_tiles": 120,
+        "mean_fom": 0.21856622707275838,
+        "std_fom": 0.0755570142678288,
+        "per_city_mean": {
+          "arequipa": 0.3487486549825461,
+          "bogota": 0.19514791791886743,
+          "cali": 0.20261623814781643,
+          "caracas": 0.2629070147851956,
+          "cochabamba": 0.17820105200362632,
+          "cusco": 0.16150992614590154,
+          "la_paz": 0.3103064796179086,
+          "lima": 0.22264431694758258,
+          "medellin": 0.18081520473405222,
+          "quito": 0.17679112616642179,
+          "santiago": 0.2303781945107311
+        },
+        "between_city_std": 0.05716787902395516
+      },
+      "transformer": {
+        "n_tiles": 120,
+        "mean_fom": 0.2490895813709813,
+        "std_fom": 0.12431084034152706,
+        "per_city_mean": {
+          "arequipa": 0.44075685933431386,
+          "bogota": 0.1806775034226285,
+          "cali": 0.19004611260870968,
+          "caracas": 0.31112957268782854,
+          "cochabamba": 0.23193117173026134,
+          "cusco": 0.1350814393710434,
+          "la_paz": 0.3518086389172338,
+          "lima": 0.21977644133627933,
+          "medellin": 0.12982657249352741,
+          "quito": 0.18489448520444066,
+          "santiago": 0.39625645771459483
+        },
+        "between_city_std": 0.10151707863173096
+      }
+    },
+    "east_asia": {
+      "cnn": {
+        "n_tiles": 241,
+        "mean_fom": 0.39814971665227483,
+        "std_fom": 0.16152470936471158,
+        "per_city_mean": {
+          "beijing": 0.5335642958503083,
+          "busan": 0.2575849152611012,
+          "chengdu": 0.4722294586946802,
+          "chongqing": 0.4252811581225197,
+          "osaka": 0.18029454532478545,
+          "pearl_river_delta": 0.503128117689226,
+          "seoul": 0.39432749540193274,
+          "shanghai": 0.5973786648063623,
+          "taipei": 0.24068234951590184,
+          "tokyo": 0.194333779340419,
+          "wuhan": 0.4262457296812615
+        },
+        "between_city_std": 0.1373321063023845
+      },
+      "unet": {
+        "n_tiles": 241,
+        "mean_fom": 0.372427414722636,
+        "std_fom": 0.14548563751066887,
+        "per_city_mean": {
+          "beijing": 0.5128620834067072,
+          "busan": 0.24846749213541275,
+          "chengdu": 0.41701068371129985,
+          "chongqing": 0.3800655180069303,
+          "osaka": 0.17818984820710423,
+          "pearl_river_delta": 0.48000476393621044,
+          "seoul": 0.37846690576285863,
+          "shanghai": 0.5548624458175889,
+          "taipei": 0.23407425609695018,
+          "tokyo": 0.19490386207442018,
+          "wuhan": 0.38272263937578527
+        },
+        "between_city_std": 0.12389795595073609
+      },
+      "convlstm": {
+        "n_tiles": 241,
+        "mean_fom": 0.2828899405075105,
+        "std_fom": 0.10548801567650348,
+        "per_city_mean": {
+          "beijing": 0.3584121630984472,
+          "busan": 0.17884962707562074,
+          "chengdu": 0.3038397819672415,
+          "chongqing": 0.23128628011386135,
+          "osaka": 0.18983080171078948,
+          "pearl_river_delta": 0.364339420223466,
+          "seoul": 0.32866816652286435,
+          "shanghai": 0.42701464334683004,
+          "taipei": 0.20163288457199915,
+          "tokyo": 0.22086508247664063,
+          "wuhan": 0.22803334929004127
+        },
+        "between_city_std": 0.08016054990698004
+      },
+      "transformer": {
+        "n_tiles": 241,
+        "mean_fom": 0.44428750703289416,
+        "std_fom": 0.18723575402789427,
+        "per_city_mean": {
+          "beijing": 0.6058172422254589,
+          "busan": 0.27552180692766526,
+          "chengdu": 0.5745997099386763,
+          "chongqing": 0.5374676968966775,
+          "osaka": 0.16838962727904283,
+          "pearl_river_delta": 0.5529045851583138,
+          "seoul": 0.4100728867470377,
+          "shanghai": 0.6360123848216016,
+          "taipei": 0.24699400018396592,
+          "tokyo": 0.1917544286051065,
+          "wuhan": 0.5012974475845304
+        },
+        "between_city_std": 0.1675696446492423
+      }
+    },
+    "south_asia": {
+      "cnn": {
+        "n_tiles": 241,
+        "mean_fom": 0.3183228340767339,
+        "std_fom": 0.1228964474855064,
+        "per_city_mean": {
+          "ahmedabad": 0.29485576152189524,
+          "bengaluru": 0.3325603601293656,
+          "chennai": 0.4717461151470229,
+          "delhi": 0.3244376971072169,
+          "dhaka": 0.21943051853452342,
+          "hyderabad": 0.3751283436494361,
+          "karachi": 0.27910938989346606,
+          "kolkata": 0.2245725258113231,
+          "lahore": 0.344450924330465,
+          "mumbai": 0.30508033498111387,
+          "pune": 0.36992398443671215
+        },
+        "between_city_std": 0.06811753954932907
+      },
+      "unet": {
+        "n_tiles": 241,
+        "mean_fom": 0.3079238124712908,
+        "std_fom": 0.10956160135281953,
+        "per_city_mean": {
+          "ahmedabad": 0.2872163599983138,
+          "bengaluru": 0.3231320743389681,
+          "chennai": 0.4093881788949968,
+          "delhi": 0.3414298525208717,
+          "dhaka": 0.22427005557992596,
+          "hyderabad": 0.35520643945604297,
+          "karachi": 0.2794717349780173,
+          "kolkata": 0.23010848677879467,
+          "lahore": 0.3359012081057745,
+          "mumbai": 0.28735424964435385,
+          "pune": 0.3317555817963182
+        },
+        "between_city_std": 0.05215380130375071
+      },
+      "convlstm": {
+        "n_tiles": 241,
+        "mean_fom": 0.2185645695484738,
+        "std_fom": 0.09676602525779192,
+        "per_city_mean": {
+          "ahmedabad": 0.19388559813613157,
+          "bengaluru": 0.1959770390922827,
+          "chennai": 0.30882753449412764,
+          "delhi": 0.21845758649806207,
+          "dhaka": 0.16475193927042625,
+          "hyderabad": 0.2503299860295986,
+          "karachi": 0.2622046167311576,
+          "kolkata": 0.1635255611676673,
+          "lahore": 0.23660476284604004,
+          "mumbai": 0.23684248028629634,
+          "pune": 0.24629484024071427
+        },
+        "between_city_std": 0.04160719510042934
+      },
+      "transformer": {
+        "n_tiles": 241,
+        "mean_fom": 0.3876737072277166,
+        "std_fom": 0.14552751269059128,
+        "per_city_mean": {
+          "ahmedabad": 0.40588176431593065,
+          "bengaluru": 0.5211930135870867,
+          "chennai": 0.5349351441233576,
+          "delhi": 0.3835937516815261,
+          "dhaka": 0.23072307707213174,
+          "hyderabad": 0.4887535567628814,
+          "karachi": 0.2830798562268346,
+          "kolkata": 0.21256941330445173,
+          "lahore": 0.3817942405513169,
+          "mumbai": 0.2819895087734478,
+          "pune": 0.5102098445824728
+        },
+        "between_city_std": 0.11379896102834858
+      }
+    },
+    "ssa": {
+      "cnn": {
+        "n_tiles": 184,
+        "mean_fom": 0.3067344660506394,
+        "std_fom": 0.14467947791560712,
+        "per_city_mean": {
+          "abidjan": 0.2989237560931217,
+          "accra": 0.39291335956689966,
+          "addis_ababa": 0.40305541974591513,
+          "dakar": 0.2223492489069636,
+          "dar_es_salaam": 0.38220494133303967,
+          "johannesburg": 0.21328107448161066,
+          "kampala": 0.2742117700047892,
+          "kinshasa": 0.22810884799936848,
+          "lagos": 0.4755561666269628,
+          "luanda": 0.20611860851727892,
+          "nairobi": 0.2125711331361722
+        },
+        "between_city_std": 0.09178281739968931
+      },
+      "unet": {
+        "n_tiles": 184,
+        "mean_fom": 0.3047845832124043,
+        "std_fom": 0.12847039780349587,
+        "per_city_mean": {
+          "abidjan": 0.30701690412716753,
+          "accra": 0.38936886033624857,
+          "addis_ababa": 0.38670012832659983,
+          "dakar": 0.24427263354354314,
+          "dar_es_salaam": 0.36824124549565146,
+          "johannesburg": 0.2136714736900214,
+          "kampala": 0.25461645846998865,
+          "kinshasa": 0.255408366430754,
+          "lagos": 0.4552887968276767,
+          "luanda": 0.2266054216931017,
+          "nairobi": 0.22139022504148614
+        },
+        "between_city_std": 0.08002872325567731
+      },
+      "convlstm": {
+        "n_tiles": 184,
+        "mean_fom": 0.19666627968816158,
+        "std_fom": 0.09916892038484666,
+        "per_city_mean": {
+          "abidjan": 0.18554869441396463,
+          "accra": 0.29869967997413754,
+          "addis_ababa": 0.25436504396783727,
+          "dakar": 0.15894976037586314,
+          "dar_es_salaam": 0.2707986240889083,
+          "johannesburg": 0.1518801646272552,
+          "kampala": 0.1569188993896229,
+          "kinshasa": 0.14971530606654007,
+          "lagos": 0.2598481120132154,
+          "luanda": 0.16418410901757044,
+          "nairobi": 0.10377137380806074
+        },
+        "between_city_std": 0.060483991409692045
+      },
+      "transformer": {
+        "n_tiles": 184,
+        "mean_fom": 0.3832256692488042,
+        "std_fom": 0.16435315931841699,
+        "per_city_mean": {
+          "abidjan": 0.3587227961945909,
+          "accra": 0.4513066268481621,
+          "addis_ababa": 0.5266313226353475,
+          "dakar": 0.27392169518290016,
+          "dar_es_salaam": 0.41062417056587774,
+          "johannesburg": 0.24930287640908433,
+          "kampala": 0.403540448265825,
+          "kinshasa": 0.2923589500185809,
+          "lagos": 0.5682372860279579,
+          "luanda": 0.2259886493603224,
+          "nairobi": 0.34048666724670906
+        },
+        "between_city_std": 0.10646973352834171
+      }
+    }
+  },
+  "h1_between_city_dispersion": {
+    "andes": {
+      "between_city_std_cnn": 0.09976522790238204,
+      "between_city_std_convlstm": 0.05716787902395516,
+      "ratio_convlstm_over_cnn": 0.5730240909176553
+    },
+    "east_asia": {
+      "between_city_std_cnn": 0.1373321063023845,
+      "between_city_std_convlstm": 0.08016054990698004,
+      "ratio_convlstm_over_cnn": 0.5836985397316973
+    },
+    "south_asia": {
+      "between_city_std_cnn": 0.06811753954932907,
+      "between_city_std_convlstm": 0.04160719510042934,
+      "ratio_convlstm_over_cnn": 0.6108147090412509
+    },
+    "ssa": {
+      "between_city_std_cnn": 0.09178281739968931,
+      "between_city_std_convlstm": 0.060483991409692045,
+      "ratio_convlstm_over_cnn": 0.6589903548754735
+    }
+  },
+  "h2_recent_growth_correlation": {
+    "andes": {
+      "n_tiles": 120,
+      "mean_recent_growth_fraction": 0.35992536330782604,
+      "rho_recent_growth_vs_fom_cnn": 0.8421795754462171,
+      "rho_recent_growth_vs_fom_convlstm": 0.5134252579078333,
+      "convlstm_minus_cnn_rho": -0.3287543175383838
+    },
+    "east_asia": {
+      "n_tiles": 241,
+      "mean_recent_growth_fraction": 0.46065757784393613,
+      "rho_recent_growth_vs_fom_cnn": 0.5361552292687447,
+      "rho_recent_growth_vs_fom_convlstm": 0.16448499617500514,
+      "convlstm_minus_cnn_rho": -0.3716702330937396
+    },
+    "south_asia": {
+      "n_tiles": 241,
+      "mean_recent_growth_fraction": 0.4279778398507524,
+      "rho_recent_growth_vs_fom_cnn": 0.4172932967420859,
+      "rho_recent_growth_vs_fom_convlstm": 0.1262572381154912,
+      "convlstm_minus_cnn_rho": -0.29103605862659465
+    },
+    "ssa": {
+      "n_tiles": 184,
+      "mean_recent_growth_fraction": 0.44906906427820187,
+      "rho_recent_growth_vs_fom_cnn": 0.6213848726595887,
+      "rho_recent_growth_vs_fom_convlstm": 0.3061288815458401,
+      "convlstm_minus_cnn_rho": -0.31525599111374863
+    }
+  },
+  "h3_base_rate_stratification": {
+    "andes": {
+      "low": {
+        "n_tiles": 40,
+        "mean_prev_mean": 0.09524260517209768,
+        "mean_fom_cnn": 0.24418814005735928,
+        "mean_fom_convlstm": 0.16824776713782127,
+        "convlstm_minus_cnn": -0.07594037291953801
+      },
+      "medium": {
+        "n_tiles": 40,
+        "mean_prev_mean": 0.1662932276725769,
+        "mean_fom_cnn": 0.3363936943731459,
+        "mean_fom_convlstm": 0.26127023817539674,
+        "convlstm_minus_cnn": -0.07512345619774918
+      },
+      "high": {
+        "n_tiles": 40,
+        "mean_prev_mean": 0.24921076707541942,
+        "mean_fom_cnn": 0.2781851922840296,
+        "mean_fom_convlstm": 0.22618067590505717,
+        "convlstm_minus_cnn": -0.05200451637897244
+      }
+    },
+    "east_asia": {
+      "low": {
+        "n_tiles": 80,
+        "mean_prev_mean": 0.09551457655616105,
+        "mean_fom_cnn": 0.3947367353075746,
+        "mean_fom_convlstm": 0.23109177565468908,
+        "convlstm_minus_cnn": -0.1636449596528855
+      },
+      "medium": {
+        "n_tiles": 81,
+        "mean_prev_mean": 0.16887161301241982,
+        "mean_fom_cnn": 0.4875594591235391,
+        "mean_fom_convlstm": 0.3424871759800734,
+        "convlstm_minus_cnn": -0.1450722831434657
+      },
+      "high": {
+        "n_tiles": 80,
+        "mean_prev_mean": 0.25338125694543123,
+        "mean_fom_cnn": 0.3110353337448199,
+        "mean_fom_convlstm": 0.274345904444362,
+        "convlstm_minus_cnn": -0.036689429300457876
+      }
+    },
+    "south_asia": {
+      "low": {
+        "n_tiles": 80,
+        "mean_prev_mean": 0.06736052557826042,
+        "mean_fom_cnn": 0.22233610306555968,
+        "mean_fom_convlstm": 0.1267047915538167,
+        "convlstm_minus_cnn": -0.09563131151174298
+      },
+      "medium": {
+        "n_tiles": 81,
+        "mean_prev_mean": 0.11968069330409721,
+        "mean_fom_cnn": 0.3605260231786008,
+        "mean_fom_convlstm": 0.23680112907008186,
+        "convlstm_minus_cnn": -0.12372489410851892
+      },
+      "high": {
+        "n_tiles": 80,
+        "mean_prev_mean": 0.22002686131745577,
+        "mean_fom_cnn": 0.37157883612226794,
+        "mean_fom_convlstm": 0.29195983102750284,
+        "convlstm_minus_cnn": -0.0796190050947651
+      }
+    },
+    "ssa": {
+      "low": {
+        "n_tiles": 61,
+        "mean_prev_mean": 0.07824886272676655,
+        "mean_fom_cnn": 0.28609849350470534,
+        "mean_fom_convlstm": 0.1523744131581352,
+        "convlstm_minus_cnn": -0.13372408034657013
+      },
+      "medium": {
+        "n_tiles": 62,
+        "mean_prev_mean": 0.16715168183849705,
+        "mean_fom_cnn": 0.3745327723490436,
+        "mean_fom_convlstm": 0.2365467442423259,
+        "convlstm_minus_cnn": -0.13798602810671767
+      },
+      "high": {
+        "n_tiles": 61,
+        "mean_prev_mean": 0.2842819636962453,
+        "mean_fom_cnn": 0.25846068465393324,
+        "mean_fom_convlstm": 0.20042390355657833,
+        "convlstm_minus_cnn": -0.05803678109735491
+      }
+    }
+  },
+  "h4_loco_swing": {
+    "andes": {
+      "full_mean": 0.22455146599642273,
+      "loco_range": [
+        0.21213174709781035,
+        0.2308556199814748
+      ],
+      "max_swing_city": {
+        "held_out": "arequipa",
+        "loco_mean": 0.21213174709781035
+      },
+      "refits": [
+        {
+          "held_out": "arequipa",
+          "loco_mean": 0.21213174709781035
+        },
+        {
+          "held_out": "bogota",
+          "loco_mean": 0.22749182080417824
+        },
+        {
+          "held_out": "cali",
+          "loco_mean": 0.22674498878128335
+        },
+        {
+          "held_out": "caracas",
+          "loco_mean": 0.2207159111175454
+        },
+        {
+          "held_out": "cochabamba",
+          "loco_mean": 0.22918650739570232
+        },
+        {
+          "held_out": "cusco",
+          "loco_mean": 0.2308556199814748
+        },
+        {
+          "held_out": "la_paz",
+          "loco_mean": 0.21597596463427413
+        },
+        {
+          "held_out": "lima",
+          "loco_mean": 0.22474218090130674
+        },
+        {
+          "held_out": "medellin",
+          "loco_mean": 0.22892509212265977
+        },
+        {
+          "held_out": "quito",
+          "loco_mean": 0.2293274999794228
+        },
+        {
+          "held_out": "santiago",
+          "loco_mean": 0.2239687931449919
+        }
+      ]
+    },
+    "east_asia": {
+      "full_mean": 0.2757065636725274,
+      "loco_range": [
+        0.26057575570509717,
+        0.28539225733221807
+      ],
+      "max_swing_city": {
+        "held_out": "shanghai",
+        "loco_mean": 0.26057575570509717
+      },
+      "refits": [
+        {
+          "held_out": "beijing",
+          "loco_mean": 0.26743600372993537
+        },
+        {
+          "held_out": "busan",
+          "loco_mean": 0.28539225733221807
+        },
+        {
+          "held_out": "chengdu",
+          "loco_mean": 0.27289324184305597
+        },
+        {
+          "held_out": "chongqing",
+          "loco_mean": 0.28014859202839404
+        },
+        {
+          "held_out": "osaka",
+          "loco_mean": 0.2842941398687012
+        },
+        {
+          "held_out": "pearl_river_delta",
+          "loco_mean": 0.26684327801743357
+        },
+        {
+          "held_out": "seoul",
+          "loco_mean": 0.2704104033874937
+        },
+        {
+          "held_out": "shanghai",
+          "loco_mean": 0.26057575570509717
+        },
+        {
+          "held_out": "taipei",
+          "loco_mean": 0.28311393158258025
+        },
+        {
+          "held_out": "tokyo",
+          "loco_mean": 0.2811907117921161
+        },
+        {
+          "held_out": "wuhan",
+          "loco_mean": 0.28047388511077603
+        }
+      ]
+    },
+    "south_asia": {
+      "full_mean": 0.22524563134477313,
+      "loco_range": [
+        0.21688744102983767,
+        0.2314176383624837
+      ],
+      "max_swing_city": {
+        "held_out": "chennai",
+        "loco_mean": 0.21688744102983767
+      },
+      "refits": [
+        {
+          "held_out": "ahmedabad",
+          "loco_mean": 0.22838163466563727
+        },
+        {
+          "held_out": "bengaluru",
+          "loco_mean": 0.22817249057002215
+        },
+        {
+          "held_out": "chennai",
+          "loco_mean": 0.21688744102983767
+        },
+        {
+          "held_out": "delhi",
+          "loco_mean": 0.22592443582944424
+        },
+        {
+          "held_out": "dhaka",
+          "loco_mean": 0.2312950005522078
+        },
+        {
+          "held_out": "hyderabad",
+          "loco_mean": 0.22273719587629057
+        },
+        {
+          "held_out": "karachi",
+          "loco_mean": 0.22154973280613466
+        },
+        {
+          "held_out": "kolkata",
+          "loco_mean": 0.2314176383624837
+        },
+        {
+          "held_out": "lahore",
+          "loco_mean": 0.22410971819464645
+        },
+        {
+          "held_out": "mumbai",
+          "loco_mean": 0.2240859464506208
+        },
+        {
+          "held_out": "pune",
+          "loco_mean": 0.22314071045517903
+        }
+      ]
+    },
+    "ssa": {
+      "full_mean": 0.19587997888572506,
+      "loco_range": [
+        0.18559800877688382,
+        0.20509083939349151
+      ],
+      "max_swing_city": {
+        "held_out": "accra",
+        "loco_mean": 0.18559800877688382
+      },
+      "refits": [
+        {
+          "held_out": "abidjan",
+          "loco_mean": 0.1969131073329011
+        },
+        {
+          "held_out": "accra",
+          "loco_mean": 0.18559800877688382
+        },
+        {
+          "held_out": "addis_ababa",
+          "loco_mean": 0.19003147237751383
+        },
+        {
+          "held_out": "dakar",
+          "loco_mean": 0.19957300073671128
+        },
+        {
+          "held_out": "dar_es_salaam",
+          "loco_mean": 0.18838811436540676
+        },
+        {
+          "held_out": "johannesburg",
+          "loco_mean": 0.20027996031157205
+        },
+        {
+          "held_out": "kampala",
+          "loco_mean": 0.19977608683533526
+        },
+        {
+          "held_out": "kinshasa",
+          "loco_mean": 0.20049644616764356
+        },
+        {
+          "held_out": "lagos",
+          "loco_mean": 0.189483165572976
+        },
+        {
+          "held_out": "luanda",
+          "loco_mean": 0.19904956587254052
+        },
+        {
+          "held_out": "nairobi",
+          "loco_mean": 0.20509083939349151
+        }
+      ]
+    }
+  }
+}

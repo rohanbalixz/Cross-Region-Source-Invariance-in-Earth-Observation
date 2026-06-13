@@ -1,0 +1,181 @@
+{
+ "input": "Sentinel-1 RTC SAR (VV+VH)",
+ "target": "GHSL built-up 2015",
+ "grid": 64,
+ "seeds": [
+  20260525,
+  1,
+  2,
+  3,
+  4
+ ],
+ "per_seed": {
+  "20260525": {
+   "in_region": 0.3566416884083924,
+   "out_region": 0.331079637822575,
+   "home_field_gap": 0.025562050585817397,
+   "retention": 0.9283256797602805,
+   "source_inv": 0.639556786703601,
+   "diag": {
+    "south_asia": 0.426,
+    "ssa": 0.49,
+    "east_asia": 0.547,
+    "andes": 0.163,
+    "mena": 0.455,
+    "sea": 0.425,
+    "eeca": 0.347,
+    "oceania": 0.359,
+    "weur": 0.558,
+    "latam": 0.254,
+    "camcar": 0.235,
+    "canada": 0.295,
+    "nordic": 0.167,
+    "central_europe": 0.296,
+    "china_interior": 0.484,
+    "south_asia_2": 0.138,
+    "southern_africa": 0.484,
+    "mediterranean": 0.207,
+    "brazil_north": 0.158,
+    "japan_korea_2": 0.644
+   }
+  },
+  "1": {
+   "in_region": 0.36043805672714585,
+   "out_region": 0.32184496808312557,
+   "home_field_gap": 0.03859308864402028,
+   "retention": 0.8929272646888241,
+   "source_inv": 0.686339533043134,
+   "diag": {
+    "south_asia": 0.459,
+    "ssa": 0.133,
+    "east_asia": 0.15,
+    "andes": 0.509,
+    "mena": 0.462,
+    "sea": 0.568,
+    "eeca": 0.558,
+    "oceania": 0.4,
+    "weur": 0.566,
+    "latam": 0.485,
+    "camcar": 0.384,
+    "canada": 0.162,
+    "nordic": 0.463,
+    "central_europe": 0.257,
+    "china_interior": 0.461,
+    "south_asia_2": 0.104,
+    "southern_africa": 0.209,
+    "mediterranean": 0.193,
+    "brazil_north": 0.402,
+    "japan_korea_2": 0.287
+   }
+  },
+  "2": {
+   "in_region": 0.400444197003522,
+   "out_region": 0.3426385167755866,
+   "home_field_gap": 0.05780568022793542,
+   "retention": 0.855646103351007,
+   "source_inv": 0.6602136921250494,
+   "diag": {
+    "south_asia": 0.288,
+    "ssa": 0.324,
+    "east_asia": 0.568,
+    "andes": 0.504,
+    "mena": 0.501,
+    "sea": 0.198,
+    "eeca": 0.555,
+    "oceania": 0.392,
+    "weur": 0.424,
+    "latam": 0.39,
+    "camcar": 0.436,
+    "canada": 0.49,
+    "nordic": 0.17,
+    "central_europe": 0.493,
+    "china_interior": 0.389,
+    "south_asia_2": 0.271,
+    "southern_africa": 0.396,
+    "mediterranean": 0.259,
+    "brazil_north": 0.392,
+    "japan_korea_2": 0.567
+   }
+  },
+  "3": {
+   "in_region": 0.34685189512717796,
+   "out_region": 0.3149629446835832,
+   "home_field_gap": 0.031888950443594744,
+   "retention": 0.9080617667321603,
+   "source_inv": 0.6471151563118321,
+   "diag": {
+    "south_asia": 0.362,
+    "ssa": 0.483,
+    "east_asia": 0.528,
+    "andes": 0.035,
+    "mena": 0.431,
+    "sea": 0.465,
+    "eeca": 0.004,
+    "oceania": 0.211,
+    "weur": 0.184,
+    "latam": 0.463,
+    "camcar": 0.357,
+    "canada": 0.477,
+    "nordic": 0.19,
+    "central_europe": 0.464,
+    "china_interior": 0.502,
+    "south_asia_2": 0.254,
+    "southern_africa": 0.283,
+    "mediterranean": 0.383,
+    "brazil_north": 0.261,
+    "japan_korea_2": 0.6
+   }
+  },
+  "4": {
+   "in_region": 0.336898794654218,
+   "out_region": 0.3074098473671024,
+   "home_field_gap": 0.029488947287115597,
+   "retention": 0.9124694188431808,
+   "source_inv": 0.5981559161060546,
+   "diag": {
+    "south_asia": 0.257,
+    "ssa": 0.445,
+    "east_asia": 0.087,
+    "andes": 0.455,
+    "mena": 0.155,
+    "sea": 0.342,
+    "eeca": 0.562,
+    "oceania": 0.386,
+    "weur": 0.425,
+    "latam": 0.355,
+    "camcar": 0.287,
+    "canada": 0.279,
+    "nordic": 0.461,
+    "central_europe": 0.537,
+    "china_interior": 0.325,
+    "south_asia_2": 0.067,
+    "southern_africa": 0.224,
+    "mediterranean": 0.339,
+    "brazil_north": 0.114,
+    "japan_korea_2": 0.638
+   }
+  }
+ },
+ "aggregate": {
+  "in_region": {
+   "mean": 0.36025492638409123,
+   "sd": 0.024256012834812768
+  },
+  "out_region": {
+   "mean": 0.3235871829463946,
+   "sd": 0.013767799256158217
+  },
+  "home_field_gap": {
+   "mean": 0.03666774343769669,
+   "sd": 0.012730158250037583
+  },
+  "retention": {
+   "mean": 0.8994860466750906,
+   "sd": 0.027562626941399205
+  },
+  "source_inv": {
+   "mean": 0.6462762168579342,
+   "sd": 0.03225190082008484
+  }
+ }
+}

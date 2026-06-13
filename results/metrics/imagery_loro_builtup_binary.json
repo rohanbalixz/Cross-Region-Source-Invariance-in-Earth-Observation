@@ -1,0 +1,88 @@
+{
+ "task": "builtup_binary",
+ "seed": 20260525,
+ "per_region": {
+  "south_asia": {
+   "in_region": 0.7284843335087193,
+   "single_source_out": 0.515118466321126,
+   "multi_source_loro": 0.5671380606555101,
+   "retention_single": 0.7071098754314673,
+   "retention_loro": 0.7785178549055536,
+   "loro_minus_single": 0.05201959433438408
+  },
+  "ssa": {
+   "in_region": 0.5845729558506971,
+   "single_source_out": 0.421732880634941,
+   "multi_source_loro": 0.4929598086110391,
+   "retention_single": 0.7214375492640027,
+   "retention_loro": 0.8432819268788472,
+   "loro_minus_single": 0.07122692797609809
+  },
+  "east_asia": {
+   "in_region": 0.7671501387886549,
+   "single_source_out": 0.7229645394520712,
+   "multi_source_loro": 0.7820841965778708,
+   "retention_single": 0.9424029311832575,
+   "retention_loro": 1.019466929658381,
+   "loro_minus_single": 0.059119657125799585
+  },
+  "andes": {
+   "in_region": 0.6024629171882663,
+   "single_source_out": 0.4450122575468613,
+   "multi_source_loro": 0.6269463580711171,
+   "retention_single": 0.7386550190072486,
+   "retention_loro": 1.0406389176567359,
+   "loro_minus_single": 0.1819341005242558
+  },
+  "mena": {
+   "in_region": 0.7062132796495515,
+   "single_source_out": 0.4832525835157539,
+   "multi_source_loro": 0.6527616468080915,
+   "retention_single": 0.6842870241063171,
+   "retention_loro": 0.9243123368226881,
+   "loro_minus_single": 0.16950906329233756
+  },
+  "eeca": {
+   "in_region": 0.7411801348417751,
+   "single_source_out": 0.6346721131839698,
+   "multi_source_loro": 0.6416654190475398,
+   "retention_single": 0.8562994113697578,
+   "retention_loro": 0.8657347773959438,
+   "loro_minus_single": 0.006993305863570054
+  },
+  "oceania": {
+   "in_region": 0.7151392589760184,
+   "single_source_out": 0.5772389666007774,
+   "multi_source_loro": 0.6869458166902361,
+   "retention_single": 0.8071700152880779,
+   "retention_loro": 0.9605762906567996,
+   "loro_minus_single": 0.10970685008945869
+  }
+ },
+ "summary": {
+  "in_region": {
+   "mean": 0.6921718598290976,
+   "sd": 0.07034679630400836
+  },
+  "single_source_out": {
+   "mean": 0.5428559724650716,
+   "sd": 0.10848780194809486
+  },
+  "multi_source_loro": {
+   "mean": 0.6357859009230579,
+   "sd": 0.09085999221410976
+  },
+  "retention_single": {
+   "mean": 0.7796231179500185,
+   "sd": 0.09358279737396595
+  },
+  "retention_loro": {
+   "mean": 0.9189327191392785,
+   "sd": 0.09570096747208467
+  },
+  "loro_minus_single": {
+   "mean": 0.09292992845798627,
+   "sd": 0.06421381582276675
+  }
+ }
+}

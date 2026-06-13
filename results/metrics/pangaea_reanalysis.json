@@ -1,0 +1,57 @@
+{
+  "source": "Marsocci et al. 2024, PANGAEA (arXiv:2412.04204v2), Table 5 (100% labels)",
+  "n_models": 14,
+  "n_gfm": 12,
+  "n_datasets_miou": 10,
+  "datasets": [
+    "HLSBurnScars",
+    "MADOS",
+    "PASTIS",
+    "Sen1Floods11",
+    "xView2",
+    "FiveBillionPixels",
+    "DynamicEarthNet",
+    "CropTypeMapping",
+    "SpaceNet7",
+    "AI4SmallFarms"
+  ],
+  "models": [
+    "CROMA",
+    "DOFA",
+    "GFM-Swin",
+    "Prithvi",
+    "RemoteCLIP",
+    "SatlasNet",
+    "Scale-MAE",
+    "SpectralGPT",
+    "S12-MoCo",
+    "S12-DINO",
+    "S12-MAE",
+    "S12-Data2Vec",
+    "UNet",
+    "ViT"
+  ],
+  "naive_variance_decomposition": {
+    "dataset_pct": 90.9,
+    "model_pct": 0.9,
+    "residual_pct": 8.2
+  },
+  "between_dataset_sd": 18.5,
+  "within_dataset_sd": 5.8,
+  "standardized_model_effect_pct": 14.4,
+  "binary_seg_model_effect_pct": 41.7,
+  "cross_dataset_ranking_spearman": 0.07,
+  "naive_vs_corrected_ranking_spearman": 0.89,
+  "top_model_naive": "UNet",
+  "top_model_corrected": "UNet",
+  "n_models_winning_ge1": 6,
+  "max_datasets_won_by_one_model": 4,
+  "wins_per_model": {
+    "UNet": 4,
+    "Scale-MAE": 2,
+    "CROMA": 1,
+    "ViT": 1,
+    "RemoteCLIP": 1,
+    "S12-Data2Vec": 1
+  }
+}

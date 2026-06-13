@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+matplotlib>=3.7
+
+# Geospatial I/O and analysis
+rasterio>=1.3
+rioxarray>=0.15
+geopandas>=0.14
+shapely>=2.0
+pyproj>=3.5
+pyogrio>=0.7
+networkx>=3.0
+osmnx>=1.6
+
+# Data acquisition (Microsoft Planetary Computer; no credentials required)
+pystac-client>=0.7
+planetary-computer>=1.0
+odc-stac>=0.3
+
+# Deep learning (training the transfer matrices; foundation-model controls)
+torch>=2.1
+
+# The Prithvi-EO foundation-model control additionally requires the `prithvi_mae`
+# package and HLS weights from the official IBM/NASA release; see the README.

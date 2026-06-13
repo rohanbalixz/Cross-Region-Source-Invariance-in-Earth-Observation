@@ -1,0 +1,50 @@
+[
+ {
+  "task": "water_binary",
+  "n_sources": 7,
+  "in_region_miou": 0.908,
+  "out_region_miou": 0.717,
+  "home_field_gap": 0.1907,
+  "source_invariance": 0.323
+ },
+ {
+  "task": "builtup_binary",
+  "n_sources": 7,
+  "in_region_miou": 0.684,
+  "out_region_miou": 0.559,
+  "home_field_gap": 0.1255,
+  "source_invariance": 0.473
+ },
+ {
+  "task": "tree_binary",
+  "n_sources": 7,
+  "in_region_miou": 0.479,
+  "out_region_miou": 0.422,
+  "home_field_gap": 0.0566,
+  "source_invariance": 0.886
+ },
+ {
+  "task": "crop_binary",
+  "n_sources": 7,
+  "in_region_miou": 0.164,
+  "out_region_miou": 0.063,
+  "home_field_gap": 0.1014,
+  "source_invariance": NaN
+ },
+ {
+  "task": "multiclass11",
+  "n_sources": 7,
+  "in_region_miou": 0.319,
+  "out_region_miou": 0.246,
+  "home_field_gap": 0.0737,
+  "source_invariance": 0.366
+ },
+ {
+  "task": "builtup_nowcast(temporal)",
+  "n_sources": 9,
+  "in_region_miou": null,
+  "out_region_miou": null,
+  "home_field_gap": 0.001,
+  "source_invariance": 0.94
+ }
+]

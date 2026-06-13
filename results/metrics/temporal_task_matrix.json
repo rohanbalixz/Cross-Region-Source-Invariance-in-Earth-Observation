@@ -1,0 +1,26 @@
+[
+ {
+  "task": "bu_nowcast(temporal)",
+  "n_sources": 8,
+  "in_region_fom": 0.341,
+  "out_region_fom": 0.338,
+  "home_field_gap": 0.0022,
+  "source_invariance": 0.966
+ },
+ {
+  "task": "vol_nowcast(temporal)",
+  "n_sources": 8,
+  "in_region_fom": 0.303,
+  "out_region_fom": 0.302,
+  "home_field_gap": 0.0014,
+  "source_invariance": 0.981
+ },
+ {
+  "task": "pop_nowcast(temporal)",
+  "n_sources": 8,
+  "in_region_fom": 0.428,
+  "out_region_fom": 0.426,
+  "home_field_gap": 0.002,
+  "source_invariance": 0.994
+ }
+]

@@ -1,0 +1,32 @@
+{
+  "FOM_T": "t=0.01",
+  "n_covariates": 12,
+  "within_source": {
+    "region": "conus",
+    "n_tiles_total": 500,
+    "n_tiles_used": 500,
+    "n_dropped": 0,
+    "R2_fom_cnn": 0.568,
+    "R2_fom_unet": 0.535,
+    "R2_fom_convlstm": 0.465,
+    "R2_state": 0.912,
+    "R2_change": 0.491,
+    "corr_fom_change": 0.862
+  },
+  "cross_region_loro": {
+    "per_region_R2": {
+      "andes": -0.192,
+      "ssa": -0.151,
+      "south_asia": 0.081,
+      "east_asia": -0.296,
+      "mena": -0.01,
+      "sea": 0.006,
+      "eeca": -0.73,
+      "oceania": -2.403
+    },
+    "median_R2": -0.171,
+    "n_folds_R2_positive": 2,
+    "n_folds": 8,
+    "n_tiles": 1491
+  }
+}

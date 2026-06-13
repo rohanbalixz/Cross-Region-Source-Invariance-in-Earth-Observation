@@ -1,0 +1,89 @@
+{
+ "nordic": {
+  "n_cities_present": 11,
+  "n_ok": 9,
+  "n_flagged": 2,
+  "flagged": [
+   [
+    "reykjavik",
+    "built2015=0.0033"
+   ],
+   [
+    "trondheim",
+    "built2015=0.0030"
+   ]
+  ],
+  "mean_built2015": 0.012787141371518373,
+  "mean_change": 0.17409265191914955
+ },
+ "central_europe": {
+  "n_cities_present": 11,
+  "n_ok": 11,
+  "n_flagged": 0,
+  "flagged": [],
+  "mean_built2015": 0.03975351561199535,
+  "mean_change": 0.2047813824892005
+ },
+ "china_interior": {
+  "n_cities_present": 11,
+  "n_ok": 11,
+  "n_flagged": 0,
+  "flagged": [],
+  "mean_built2015": 0.056226293641057884,
+  "mean_change": 0.5286781234591224
+ },
+ "south_asia_2": {
+  "n_cities_present": 11,
+  "n_ok": 11,
+  "n_flagged": 0,
+  "flagged": [],
+  "mean_built2015": 0.018427180718969215,
+  "mean_change": 0.3752811590826289
+ },
+ "southern_africa": {
+  "n_cities_present": 11,
+  "n_ok": 10,
+  "n_flagged": 1,
+  "flagged": [
+   [
+    "windhoek",
+    "built2015=0.0029"
+   ]
+  ],
+  "mean_built2015": 0.021032472606748343,
+  "mean_change": 0.32978722909066177
+ },
+ "mediterranean": {
+  "n_cities_present": 10,
+  "n_ok": 10,
+  "n_flagged": 0,
+  "flagged": [],
+  "mean_built2015": 0.019562331866472958,
+  "mean_change": 0.30415026365730913
+ },
+ "brazil_north": {
+  "n_cities_present": 11,
+  "n_ok": 9,
+  "n_flagged": 2,
+  "flagged": [
+   [
+    "maceio",
+    "built2015=0.0049"
+   ],
+   [
+    "sao_luis",
+    "built2015=0.0037"
+   ]
+  ],
+  "mean_built2015": 0.01359499939199951,
+  "mean_change": 0.21360572909192213
+ },
+ "japan_korea_2": {
+  "n_cities_present": 11,
+  "n_ok": 11,
+  "n_flagged": 0,
+  "flagged": [],
+  "mean_built2015": 0.036069070412354035,
+  "mean_change": 0.21221917930855075
+ }
+}
