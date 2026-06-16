@@ -9,6 +9,7 @@ One JSON file per experiment — the numbers reported in the study. `../../verif
 | `confound_n20_allpix.json` | Per-region difficulty vs change rate (Spearman, CI) across twenty regions. |
 | `convlstm_disagreement.json` | Investigation of the Sprint D ConvLSTM rank-disagreement. Tests four hypotheses for why Co |
 | `covariate_null.json` | Within-source vs cross-region prediction of per-tile FoM from physical covariates. |
+| `data_scaling_curve.json` | Single-source data-scaling curve: home-field gap vs per-region training-set size, ruling out the under-fitting confound. |
 | `fm_seg_finetuned.json` | Fine-tuned DINOv2 segmentation retention. |
 | `fm_seg_matrix.json` | Frozen DINOv2 encoder segmentation retention. |
 | `full_matrix_n20_cnn.json` | Twenty-region transfer matrix: source-invariance and the change-rate confound at scale. |

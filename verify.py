@@ -83,6 +83,11 @@ check("target explains ~99.7% of matrix variance", close(tgt_pct, 99.7, 0.6), f"
 check("source explains <=0.5%", src_pct <= 0.5, f"got {src_pct:.2f}")
 check("home-field gap ~ 0", close(d20["home_field_gap"], 0.0, 0.01), f"{d20['home_field_gap']:.4f}")
 check("source-invariance ~ 0.97", close(d20["source_invariance"], 0.97, 0.02))
+ds_native = [r["home_field_gap"] for r in load("data_scaling_curve")["levels"]
+             if r["stride"] == 64]
+check("data-scaling: home-field gap stays ~0 over the native 10x data range",
+      max(abs(g) for g in ds_native) <= 0.001,
+      f"max|gap|={max(abs(g) for g in ds_native):.4f} over {len(ds_native)} levels")
 
 # --- 3. deflation: a parameter-free line beats the trained model ----------
 print("\nDeflation (parameter-free extrapolation vs trained CNN):")
